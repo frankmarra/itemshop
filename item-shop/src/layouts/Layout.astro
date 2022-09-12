@@ -1,0 +1,134 @@
+---
+export interface Props {
+  title: string
+  pageDescription: string
+}
+
+let date = new Date()
+let today = date.toDateString()
+let profilePic =
+  'https://res.cloudinary.com/silverbeard/image/upload/c_thumb,w_200,g_face/v1662995933/Portfolio/67831830374__5C6068D5-B955-4FCD-B5AC-F752F6A25D75_fq1aow.jpg'
+
+const { title, pageDescription } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="container date">{today}</div>
+      <div class="container content">
+        <slot />
+      </div>
+
+      <div class="container profile-pic">
+        <img src={profilePic} alt="picture of me, Frank Marra" />
+      </div>
+      <nav class="container nav">
+        <ul>
+          <li>
+            <a href="/about/">About</a>
+          </li>
+          <li>Projects</li>
+          <li>Resume</li>
+        </ul>
+      </nav>
+      <div class="container page-description">
+        <p>{pageDescription}</p>
+      </div>
+    </div>
+    <style>
+      @font-face {
+        font-family: retroGaming;
+        src: url('https://res.cloudinary.com/silverbeard/raw/upload/v1663001432/Portfolio/Retro_Gaming_wlyvs0.ttf');
+      }
+      :root {
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+        --color-text: #f8fcf8;
+        --color-bg: hsl(10, 21%, 95%);
+        --color-border: hsl(17, 24%, 90%);
+      }
+
+      html {
+        font-family: retroGaming, system-ui, sans-serif;
+        font-size: var(--font-size-base);
+        background-color: var(--color-bg);
+      }
+
+      body {
+        margin: 0;
+        background-image: url('https://res.cloudinary.com/silverbeard/image/upload/v1662999402/Portfolio/Map002_ui0yxp.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
+
+      .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        justify-items: center;
+        align-items: center;
+      }
+      .container {
+        margin-block: 2vh;
+        border: 5px ridge #aeb3ae;
+
+        background-color: #002460;
+        color: var(--color-text);
+        z-index: 1;
+      }
+      .content {
+        grid-column: 2 / -1;
+        grid-row: 1 / 4;
+        width: 50vw;
+        height: 60vh;
+        overflow-y: scroll;
+      }
+      .date,
+      .page-description,
+      .content {
+        padding: 1vh 2vw;
+      }
+      .nav {
+        grid-column: 1/2;
+        width: 50%;
+      }
+
+      .page-description {
+        grid-column: 1 / -1;
+        width: 70%;
+      }
+    </style>
+
+    <style is:global>
+      h1 {
+        font-size: var(--font-size-xl);
+      }
+
+      h2 {
+        font-size: var(--font-size-lg);
+      }
+
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
+      a {
+        text-decoration: none;
+      }
+      ul {
+        list-style: none;
+      }
+    </style>
+  </body>
+</html>

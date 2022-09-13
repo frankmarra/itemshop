@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const resumeLink =
+  'https://docs.google.com/document/d/1q-33FVkjh5DkG0LgGTEdNd-UdJnrkYmfElnjHYoTVzM/edit?usp=sharing'
+---
+
+<Layout title="Resume" pageDescription="This is my current resume.">
+  <main>
+    <section class="resume-wrapper">
+      <a class="resume-download-button" href={resumeLink}>Download</a>
+      <iframe
+        class="resume"
+        src="https://docs.google.com/document/d/e/2PACX-1vQ2rQLUhTyGuXlMTPqe1F35D_unPAp6gswOtKFNwogr8Kp7bs6SM-9wgLFNqn4giYKFnRy3k2Bv7k_V/pub?embedded=true"
+      ></iframe>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  main {
+    height: 100%;
+  }
+  .resume-wrapper {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+  }
+
+  iframe.resume {
+    border: none;
+    height: 55vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+</style>

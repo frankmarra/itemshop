@@ -24,6 +24,7 @@ const { title, pageDescription } = Astro.props
   <body>
     <div class="page-wrapper">
       <div class="container date">{today}</div>
+
       <div class="container content">
         <slot />
       </div>
@@ -36,8 +37,8 @@ const { title, pageDescription } = Astro.props
           <li>
             <a href="/about/">About</a>
           </li>
-          <li>Projects</li>
-          <li>Resume</li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/resume/">Resume</a></li>
         </ul>
       </nav>
       <div class="container page-description">
@@ -47,7 +48,7 @@ const { title, pageDescription } = Astro.props
     <style>
       @font-face {
         font-family: retroGaming;
-        src: url('https://res.cloudinary.com/silverbeard/raw/upload/v1663001432/Portfolio/Retro_Gaming_wlyvs0.ttf');
+        src: url('/fonts/Retro Gaming.ttf');
       }
       :root {
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
@@ -79,6 +80,7 @@ const { title, pageDescription } = Astro.props
         justify-items: center;
         align-items: center;
       }
+
       .container {
         margin-block: 2vh;
         border: 5px ridge #aeb3ae;

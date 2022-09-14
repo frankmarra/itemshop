@@ -3,28 +3,13 @@
 //   title: string
 //   pageDescription: string[]
 // }
+import Typewriter from '../components/Typewriter'
+import MovingPicture from '../components/MovingPicture'
 
-let date = new Date()
-let today = date.toDateString()
 let profilePic =
   'https://res.cloudinary.com/silverbeard/image/upload/c_thumb,w_200,g_face/v1662995933/Portfolio/67831830374__5C6068D5-B955-4FCD-B5AC-F752F6A25D75_fq1aow.jpg'
 
 const { title, pageDescription } = Astro.props
-
-let description = []
-
-const typewriter = () => {
-  if (pageDescription.length > 0) {
-    let nextLetter = pageDescription.shift()
-    description.push(nextLetter)
-    setTimeout(typewriter, 100)
-    return description
-  }
-}
-
-if (pageDescription.length > 0) {
-  setTimeout(typewriter, 300)
-}
 ---
 
 <!DOCTYPE html>
@@ -33,19 +18,62 @@ if (pageDescription.length > 0) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script
+      src="https://kit.fontawesome.com/ae0d597aae.js"
+      crossorigin="anonymous"
+    ></script>
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <div class="page-wrapper">
-      <div class="container date">{today}</div>
+      <div class="container">
+        <ul class="social-links">
+          <li>
+            <a
+              href="https://github.com/frankmarra"
+              target="_blank"
+              id="github"
+              aria-label="github"
+              ><i class="fa-brands fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/frankrmarra/"
+              target="_blank"
+              id="linkedin"
+              aria-label="linkedin"
+              ><i class="fa-brands fa-linkedin"></i>
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:frankrmarra@gmail.com"
+              target="_blank"
+              id="email"
+              aria-label="email"
+              ><i class="fa-solid fa-envelope"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
 
       <div class="container content">
         <slot />
       </div>
 
-      <div class="container profile-pic">
-        <img src={profilePic} alt="picture of me, Frank Marra" />
+      <div class="profile-pic-stats">
+        <div class="container profile-pic">
+          <MovingPicture pageDescription={pageDescription} client:load />
+        </div>
+        <div class="container stats">
+          <p>
+            Frank Marra / Lvl. 9
+            <br />
+            Software Engineer
+          </p>
+        </div>
       </div>
       <nav class="container nav">
         <ul>
@@ -57,9 +85,7 @@ if (pageDescription.length > 0) {
         </ul>
       </nav>
       <div class="container page-description">
-        <p id="page-description-text">
-          {pageDescription}
-        </p>
+        <Typewriter pageDescription={pageDescription} client:load />
       </div>
     </div>
 
@@ -100,12 +126,24 @@ if (pageDescription.length > 0) {
       }
 
       .container {
-        margin-block: 2vh;
+        margin-block: 1.5vh;
         border: 5px ridge #aeb3ae;
 
         background-color: #002460;
         color: var(--color-text);
         z-index: 1;
+      }
+
+      .social-links {
+        display: flex;
+        flex-flow: row nowrap;
+        margin: 1vh 0;
+      }
+
+      .social-links li {
+        font-size: 1.2rem;
+        color: var(--color-text);
+        padding: 0 2vw;
       }
       .content {
         grid-column: 2 / -1;
@@ -121,41 +159,20 @@ if (pageDescription.length > 0) {
       }
       .nav {
         grid-column: 1/2;
-        width: 50%;
+        width: 35%;
       }
 
       .page-description {
         grid-column: 1 / -1;
         width: 70%;
       }
-
-      /* .page-description p {
-        overflow: hidden;
-        border-right: 0.15em solid var(--color-text);
-        margin: 0 auto;
-
-        animation: typing 2.5s steps(30, end),
-          blink-caret 0.75s step-end infinite;
+      .profile-pic {
+        height: 230px;
+        width: 256px;
       }
-
-      @keyframes typing {
-        from {
-          width: 0;
-        }
-        to {
-          width: 100%;
-        }
+      .stats {
+        text-align: center;
       }
-
-      @keyframes blink-caret {
-        from,
-        to {
-          border-color: transparent;
-        }
-        50% {
-          border-color: var(--color-text);
-        }
-      } */
     </style>
 
     <style is:global>
@@ -175,14 +192,14 @@ if (pageDescription.length > 0) {
         text-decoration: none;
         color: var(--color-text);
       }
-      a:hover {
+      li:hover {
         animation: blink 0.7s infinite;
+        width: 100%;
       }
-      a:current {
-        background-color: #e32029;
-      }
+
       ul {
         list-style: none;
+        padding: 0 20px;
       }
 
       @keyframes blink {

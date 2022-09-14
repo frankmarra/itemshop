@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro'
+
+let pageDescription =
+  "Hi, I'm Frank Marra.  Thanks for visiting my portfolio.  Click 'About' for more details about me, 'Projects' to see what I've been working on, or 'Resume' for my work history."
+
+let letters = pageDescription.split('')
 ---
 
-<Layout
-  title="Frank Marras Portfolio"
-  pageDescription="Hi, I'm Frank Marra.  Thanks for visiting my portfolio.  Click 'About' for more details about me, 'Projects' to see what I've been working on, or 'Resume' for my work history."
->
+<Layout title="Frank Marras Portfolio" pageDescription={letters}>
   <main></main>
 </Layout>
 

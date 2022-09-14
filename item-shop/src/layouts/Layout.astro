@@ -1,8 +1,8 @@
 ---
-export interface Props {
-  title: string
-  pageDescription: string
-}
+// export interface Props {
+//   title: string
+//   pageDescription: string[]
+// }
 
 let date = new Date()
 let today = date.toDateString()
@@ -10,6 +10,21 @@ let profilePic =
   'https://res.cloudinary.com/silverbeard/image/upload/c_thumb,w_200,g_face/v1662995933/Portfolio/67831830374__5C6068D5-B955-4FCD-B5AC-F752F6A25D75_fq1aow.jpg'
 
 const { title, pageDescription } = Astro.props
+
+let description = []
+
+const typewriter = () => {
+  if (pageDescription.length > 0) {
+    let nextLetter = pageDescription.shift()
+    description.push(nextLetter)
+    setTimeout(typewriter, 100)
+    return description
+  }
+}
+
+if (pageDescription.length > 0) {
+  setTimeout(typewriter, 300)
+}
 ---
 
 <!DOCTYPE html>
@@ -42,9 +57,12 @@ const { title, pageDescription } = Astro.props
         </ul>
       </nav>
       <div class="container page-description">
-        <p>{pageDescription}</p>
+        <p id="page-description-text">
+          {pageDescription}
+        </p>
       </div>
     </div>
+
     <style>
       @font-face {
         font-family: retroGaming;
@@ -110,6 +128,34 @@ const { title, pageDescription } = Astro.props
         grid-column: 1 / -1;
         width: 70%;
       }
+
+      /* .page-description p {
+        overflow: hidden;
+        border-right: 0.15em solid var(--color-text);
+        margin: 0 auto;
+
+        animation: typing 2.5s steps(30, end),
+          blink-caret 0.75s step-end infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink-caret {
+        from,
+        to {
+          border-color: transparent;
+        }
+        50% {
+          border-color: var(--color-text);
+        }
+      } */
     </style>
 
     <style is:global>
@@ -127,9 +173,26 @@ const { title, pageDescription } = Astro.props
       }
       a {
         text-decoration: none;
+        color: var(--color-text);
+      }
+      a:hover {
+        animation: blink 0.7s infinite;
+      }
+      a:current {
+        background-color: #e32029;
       }
       ul {
         list-style: none;
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          background-color: transparent;
+        }
+        50% {
+          background-color: #e32029;
+        }
       }
     </style>
   </body>

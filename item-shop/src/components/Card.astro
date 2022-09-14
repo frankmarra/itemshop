@@ -1,0 +1,50 @@
+---
+export interface Props {
+  title: string
+  body: string
+  href: string
+  thumb: string
+}
+
+const { href, title, body, thumb } = Astro.props
+---
+
+<li class="link-card">
+  <a href={href}>
+    <img src={thumb} alt={title} />
+    <div class="card-details">
+      <h3>
+        {title}
+      </h3>
+      <p>
+        {body}
+      </p>
+    </div>
+  </a>
+</li>
+
+<style>
+  h3 {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+  .link-card a {
+    display: flex;
+    color: var(--color-text);
+    align-items: center;
+  }
+  img {
+    height: 15vh;
+    width: auto;
+  }
+  .card-details {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

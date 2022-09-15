@@ -1,0 +1,146 @@
+---
+const { title, techUsed, picArray, projectLinks } = Astro.props
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <script
+      src="https://kit.fontawesome.com/ae0d597aae.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="container project-links-and-info">
+        <a href="/projects/">Back</a>
+      </div>
+      <div class="container content">
+        <slot />
+      </div>
+
+      <div class="container picture-array"></div>
+
+      <div class="container tech-used" set:html={techUsed}></div>
+    </div>
+    <style>
+      .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border: 5px ridge #aeb3ae;
+        justify-items: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        margin-block: 1.5vh;
+        border: 5px ridge #aeb3ae;
+
+        background-color: transparent;
+        color: var(--color-text);
+        z-index: 1;
+      }
+      .project-links-and-info {
+        grid-column: 1 / -1;
+      }
+      .content {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        width: 50vw;
+        height: 60vh;
+        overflow-y: scroll;
+      }
+
+      .picture-array {
+        grid-column: 2/ -1;
+        grid-row: 2 / 3;
+      }
+
+      .tech-used {
+        grid-column: 1 / -1;
+        grid-row: 3 / 4;
+        width: 70%;
+      }
+    </style>
+    <style is:global>
+      @font-face {
+        font-family: retroGaming;
+        src: url('/fonts/Retro Gaming.ttf');
+      }
+      :root {
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+        --color-text: #f8fcf8;
+        --color-bg: #002460;
+        --color-border: hsl(17, 24%, 90%);
+      }
+
+      html {
+        font-family: retroGaming, system-ui, sans-serif;
+        font-size: var(--font-size-base);
+        background-color: var(--color-bg);
+      }
+
+      body {
+        margin: 0;
+        background-image: linear-gradient(
+          to bottom right,
+          #2410d8,
+          var(--color-bg)
+        );
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
+      h1 {
+        font-size: var(--font-size-xl);
+      }
+
+      h2 {
+        font-size: var(--font-size-lg);
+      }
+
+      code {
+        font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+          DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+      }
+      a {
+        text-decoration: none;
+        color: var(--color-text);
+      }
+      a:hover {
+        animation: blink 0.7s infinite;
+        width: 100%;
+      }
+
+      ul {
+        list-style: none;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      li {
+        margin-inline: 2vw;
+      }
+
+      @keyframes blink {
+        from,
+        to {
+          background-color: transparent;
+        }
+        50% {
+          background-color: #e32029;
+        }
+      }
+    </style>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
+
+const techUsed = `
+  <ul class="tech-used-list">
+    Built With
+    <li>
+      <img
+        style="height: 10vh;"
+        src="https://res.cloudinary.com/silverbeard/image/upload/v1661359286/Portfolio/next-js-logo-7929BCD36F-seeklogo.com_tvqole.png"
+        alt="NextJS"
+        id="next"
+      />
+    </li>
+    <li>
+      <i class="fa-brands fa-css3"></i>
+    </li>
+    <li>
+      <img
+      style="height: 10vh;"
+        src="https://res.cloudinary.com/silverbeard/image/upload/v1652931906/Portfolio/116px-PostgreSQL_Logo.1_Color_Black_n5r32u.png"
+        alt="PostgreSQL"
+        id="postgres"
+      />
+    </li>
+  </ul>
+`
+---
+
+<ProjectLayout title="Download Code Manager" techUsed={techUsed}>
+  <main>
+    <p>
+      Download Code Manager is a simple app where users can visit the page of a
+      record label and pick an album or track from their roster of artists and
+      receive a code to use on their bandcamp page to download a free digital
+      copy of the song or album.
+    </p>
+    <p>
+      This is the first freelance project that I completed after graduating from
+      the General Assembly Software Engineering course. I decided to use this
+      opportunity to teach myself NextJS. I am very happy that I did, because
+      Next has quickly become my front-end framework of choice. The built in
+      routing is very intuitive with dynamic routing being a favorite feature of
+      mine.
+    </p>
+    <p>
+      The back-end database is postgresql and built with express and sequelize.
+      Users will be able to add artists and albums to their label and then add
+      codes to the albums. Each album will show how many codes are available and
+      how many have been redeemed by customers.
+    </p>
+    <p>
+      To deploy this site, we went with a2 hosting and Cpanel. This was a
+      completely new thing to me, and while not the easiest way to deploy a
+      site, I learned a lot about servers, hosting, and deployment
+    </p>
+    <p>
+      The amount I learned while building this project is so much more than what
+      is contained in this brief case study, and it would not have been possible
+      without the help of Ryan Mulligan, Jon Black, and Tom DuHamel.
+    </p>
+    <p>
+      I would especially like to thank Dave Mulligan for giving me the
+      opportunity to build this site.
+    </p>
+  </main>
+</ProjectLayout>

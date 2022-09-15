@@ -87,34 +87,6 @@ const { title, pageDescription } = Astro.props
     </div>
 
     <style>
-      @font-face {
-        font-family: retroGaming;
-        src: url('/fonts/Retro Gaming.ttf');
-      }
-      :root {
-        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-        --color-text: #f8fcf8;
-        --color-bg: hsl(10, 21%, 95%);
-        --color-border: hsl(17, 24%, 90%);
-      }
-
-      html {
-        font-family: retroGaming, system-ui, sans-serif;
-        font-size: var(--font-size-base);
-        background-color: var(--color-bg);
-      }
-
-      body {
-        margin: 0;
-        background-image: url('/assets/map001.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100vh;
-      }
-
       .page-wrapper {
         display: grid;
         grid-template-columns: 1fr 2fr;
@@ -126,7 +98,7 @@ const { title, pageDescription } = Astro.props
         margin-block: 1.5vh;
         border: 5px ridge #aeb3ae;
 
-        background-color: #002460;
+        background-color: var(--color-bg);
         color: var(--color-text);
         z-index: 1;
       }
@@ -173,6 +145,33 @@ const { title, pageDescription } = Astro.props
     </style>
 
     <style is:global>
+      @font-face {
+        font-family: retroGaming;
+        src: url('/fonts/Retro Gaming.ttf');
+      }
+      :root {
+        --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+        --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
+        --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+
+        --color-text: #f8fcf8;
+        --color-bg: #002460;
+        --color-border: hsl(17, 24%, 90%);
+      }
+
+      html {
+        font-family: retroGaming, system-ui, sans-serif;
+        font-size: var(--font-size-base);
+        background-color: var(--color-bg);
+      }
+
+      body {
+        margin: 0;
+        background-image: url('/assets/map001.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+      }
       h1 {
         font-size: var(--font-size-xl);
       }

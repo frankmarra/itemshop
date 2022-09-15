@@ -6,9 +6,6 @@
 import Typewriter from '../components/Typewriter'
 import MovingPicture from '../components/MovingPicture'
 
-let profilePic =
-  'https://res.cloudinary.com/silverbeard/image/upload/c_thumb,w_200,g_face/v1662995933/Portfolio/67831830374__5C6068D5-B955-4FCD-B5AC-F752F6A25D75_fq1aow.jpg'
-
 const { title, pageDescription } = Astro.props
 ---
 
@@ -69,7 +66,7 @@ const { title, pageDescription } = Astro.props
         </div>
         <div class="container stats">
           <p>
-            Frank Marra / Lvl. 9
+            Frank Marra
             <br />
             Software Engineer
           </p>
@@ -112,7 +109,7 @@ const { title, pageDescription } = Astro.props
 
       body {
         margin: 0;
-        background-image: url('https://res.cloudinary.com/silverbeard/image/upload/v1662999402/Portfolio/Map002_ui0yxp.png');
+        background-image: url('/assets/map001.png');
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;

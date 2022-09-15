@@ -11,11 +11,10 @@ export default function MovingPicture({ pageDescription }) {
   const movingPic = () => {
     if (pageDescription.length > 0) {
       let nextLetter = pageDescription.shift()
-      // setPicture(picArray[Math.floor(Math.random() * picArray.length)])
+
       setPicture(pixelArray[Math.floor(Math.random() * pixelArray.length)])
       setTimeout(movingPic, 40)
     } else {
-      // setPicture('/assets/Mouth_Smile_300px.png')
       setPicture('/assets/mouth_smile.png')
     }
   }

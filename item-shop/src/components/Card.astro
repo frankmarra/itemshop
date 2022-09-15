@@ -32,19 +32,31 @@ const { href, title, body, thumb } = Astro.props
   p {
     font-size: 0.8rem;
   }
+  .link-card {
+    margin-inline: 2vw;
+    padding: 6vh 2vw;
+  }
   .link-card a {
-    display: flex;
+    display: block;
     color: var(--color-text);
+    text-align: center;
     align-items: center;
   }
   img {
-    height: 15vh;
+    height: 40vh;
     width: auto;
   }
   .card-details {
-    display: flex;
+    display: none;
+    z-index: 1;
+    visibility: hidden;
+  }
+  .card-details:hover {
+    display: block;
+    visibility: visible;
     flex-flow: column;
     align-items: center;
     justify-content: center;
+    background: darken;
   }
 </style>

@@ -3,48 +3,53 @@ import Layout from '../layouts/Layout.astro'
 import Card from '../components/Card.astro'
 
 let pageDescription =
-  'These are apps that I have built, from newest to oldest.  Why not grab a free album from the Download Code Manager, or try and get a high score on Record Reveal?'
+  'These are apps that I have built.  Why not grab a free album from the Download Code Manager, or try and get a high score on Record Reveal?'
 
 let letters = pageDescription.split('')
 ---
 
 <Layout title="Projects" pageDescription={letters}>
   <main>
-    <ul>
+    <ul class="carousel">
       <Card
         title="Download Code Manager"
         body="An app that lets record labels store and distribute codes they received from bandcamp to redeem free albums"
         href="#"
-        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1661359282/Portfolio/DCM_img1_e5e6sm.png"
+        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663213074/Portfolio/DCMSNES_s4eoc1.png"
       />
       <Card
         title="Co-Lab"
         body="Music social network where users can post unfished songs and collaborate with other artists to finish them"
         href="#"
-        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1652930375/Portfolio/screencapture-frankcolab-herokuapp-2022-05-18-16_04_32_nmoi1f.png"
+        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663213071/Portfolio/CoLabSCD_jtir4o.png"
       />
       <Card
         title="Work-Track"
         body="Time management app"
         href="#"
-        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1652849341/Portfolio/screencapture-worktrack-frontend-herokuapp-2022-05-18-00_46_35_eted0n.png"
+        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663213096/Portfolio/WorkTrackNes_cf4be2.png"
       />
       <Card
         title="Backlog"
         body="App to track which games you are currently playing, want to play, and have finished"
         href="#"
-        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1652849342/Portfolio/screencapture-franksbacklog-herokuapp-users-6247019f3362d48c98e8ceba-2022-05-18-00_44_07_k07i3a.png"
+        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663213068/Portfolio/BacklogGenesis_tephsd.png"
       />
       <Card
         title="Record Reveal"
         body="A simple match game that reveals album covers"
         href="#"
-        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1652849341/Portfolio/screencapture-franksmatchgame-surge-sh-game-html-2022-05-17-14_48_55_jronpw.png"
+        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663213092/Portfolio/RecordRevealPSX_gcf0kl.png"
       />
     </ul>
   </main>
 </Layout>
 
 <style>
-
+  .carousel {
+    display: flex;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    align-items: center;
+  }
 </style>

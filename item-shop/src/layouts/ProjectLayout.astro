@@ -1,4 +1,5 @@
 ---
+import ProjectImage from '../components/ProjectImage'
 const { title, techUsed, picArray, projectLinks } = Astro.props
 ---
 
@@ -17,14 +18,21 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
   </head>
   <body>
     <div class="page-wrapper">
-      <div class="container project-links-and-info">
-        <a href="/projects/">Back</a>
+      <div class="project-links-and-info">
+        <h1>{title}</h1>
+        <div class="project-links">
+          <a href={projectLinks.url}>Visit</a>
+          <a href={projectLinks.github}> <i class="fa-brands fa-github"></i></a>
+          <a href="/projects/">Back</a>
+        </div>
+      </div>
+
+      <div class="container picture-array">
+        <ProjectImage picArray={picArray} title={title} client:load />
       </div>
       <div class="container content">
         <slot />
       </div>
-
-      <div class="container picture-array"></div>
 
       <div class="container tech-used" set:html={techUsed}></div>
     </div>
@@ -32,26 +40,35 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
       .page-wrapper {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        border: 5px ridge #aeb3ae;
+        /* border: 5px ridge #aeb3ae; */
         justify-items: center;
         align-items: center;
-        height: 100vh;
       }
       .container {
         margin-block: 1.5vh;
         border: 5px ridge #aeb3ae;
-
         background-color: transparent;
         color: var(--color-text);
         z-index: 1;
       }
       .project-links-and-info {
         grid-column: 1 / -1;
+        color: var(--color-text);
+      }
+
+      .project-links {
+        display: flex;
+        justify-content: space-around;
+        font-size: 1.4rem;
+      }
+
+      .project-links a {
+        padding-inline: 2vw;
       }
       .content {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
-        width: 50vw;
+        width: 30vw;
         height: 60vh;
         overflow-y: scroll;
       }
@@ -59,6 +76,9 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
       .picture-array {
         grid-column: 2/ -1;
         grid-row: 2 / 3;
+        width: 60vw;
+        height: 60vh;
+        overflow: hidden;
       }
 
       .tech-used {
@@ -98,11 +118,11 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
+        border: 5px ridge #aeb3ae;
       }
       h1 {
-        font-size: var(--font-size-xl);
+        margin-block: 3vh 1.5vh;
       }
-
       h2 {
         font-size: var(--font-size-lg);
       }
@@ -117,12 +137,12 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
       }
       a:hover {
         animation: blink 0.7s infinite;
-        width: 100%;
+        /* width: 50%; */
       }
 
       ul {
         list-style: none;
-
+        margin-block: 1vh;
         display: flex;
         align-items: center;
         justify-content: center;

@@ -9,10 +9,13 @@ export default function MovingPicture({ pageDescription }) {
   }, [])
 
   const movingPic = () => {
+    let mouthMove = Math.floor(Math.random() * 4)
+    console.log(mouthMove)
     if (pageDescription.length > 0) {
       let nextLetter = pageDescription.shift()
-
-      setPicture(pixelArray[Math.floor(Math.random() * pixelArray.length)])
+      if (mouthMove <= 2) {
+        setPicture(pixelArray[Math.floor(Math.random() * pixelArray.length)])
+      }
       setTimeout(movingPic, 40)
     } else {
       setPicture('/assets/mouth_smile.png')

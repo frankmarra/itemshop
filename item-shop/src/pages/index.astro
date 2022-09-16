@@ -8,9 +8,73 @@ let letters = pageDescription.split('')
 ---
 
 <Layout title="Frank Marras Portfolio" pageDescription={letters}>
-  <main></main>
+  <main>
+    <div class="title">
+      <h1 class="title-top story">Frank Marras</h1>
+      <h2 class="title-bottom story">Portfolio</h2>
+      <p class="copy-date">©2022</p>
+    </div>
+    <br />
+    <a href="/projects/">
+      <h4 class="press-start blink">Choose an option or click here</h4>
+    </a>
+  </main>
 </Layout>
 
 <style>
+  main {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 3.8rem;
+    margin: 0;
+  }
+  h2 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  .story {
+    font-family: storybook;
+  }
 
+  .title {
+    position: relative;
+    text-align: center;
+  }
+
+  .title-top {
+    /* position: absolute; */
+
+    animation: rise 2s;
+  }
+
+  .title-top:after {
+  }
+
+  .blink {
+    animation: titleblink 0.5s infinite;
+  }
+
+  @keyframes titleblink {
+    from,
+    to {
+      color: var(--color-text);
+    }
+    50% {
+      color: var(--color-bg);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      height: 0%;
+    }
+    to {
+      height: 100%;
+    }
+  }
 </style>

@@ -62,7 +62,9 @@ const { title, pageDescription } = Astro.props
 
       <div class="profile-pic-stats">
         <div class="container profile-pic">
-          <MovingPicture pageDescription={pageDescription} client:load />
+          <a href="/">
+            <MovingPicture pageDescription={pageDescription} client:load />
+          </a>
         </div>
         <div class="container stats">
           <p>
@@ -119,6 +121,7 @@ const { title, pageDescription } = Astro.props
         grid-row: 1 / 4;
         width: 50vw;
         height: 60vh;
+
         overflow-y: scroll;
       }
       .date,
@@ -149,6 +152,11 @@ const { title, pageDescription } = Astro.props
         font-family: retroGaming;
         src: url('/fonts/Retro Gaming.ttf');
       }
+
+      @font-face {
+        font-family: storybook;
+        src: url('/fonts/Storyboo.TTF');
+      }
       :root {
         --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
         --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
@@ -171,13 +179,6 @@ const { title, pageDescription } = Astro.props
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
-      }
-      h1 {
-        font-size: var(--font-size-xl);
-      }
-
-      h2 {
-        font-size: var(--font-size-lg);
       }
 
       code {

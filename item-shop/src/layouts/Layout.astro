@@ -6,7 +6,7 @@
 import Typewriter from '../components/Typewriter'
 import MovingPicture from '../components/MovingPicture'
 
-const { title, pageDescription } = Astro.props
+const { title, pageDescription, metaDescription } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -20,11 +20,12 @@ const { title, pageDescription } = Astro.props
       crossorigin="anonymous"
     ></script>
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={metaDescription} />
     <title>{title}</title>
   </head>
   <body>
     <div class="page-wrapper">
-      <div class="container">
+      <div class="container social">
         <ul class="social-links">
           <li>
             <a
@@ -56,23 +57,23 @@ const { title, pageDescription } = Astro.props
         </ul>
       </div>
 
+      <!-- <div class="space"></div> -->
       <div class="container content">
         <slot />
       </div>
 
-      <div class="profile-pic-stats">
-        <div class="container profile-pic">
-          <a href="/">
-            <MovingPicture pageDescription={pageDescription} client:load />
-          </a>
-        </div>
-        <div class="container stats">
-          <p>
-            Frank Marra
-            <br />
-            Software Engineer
-          </p>
-        </div>
+      <div class="container profile-pic">
+        <a href="/">
+          <MovingPicture pageDescription={pageDescription} client:load />
+        </a>
+      </div>
+      <div class="space"></div>
+      <div class="container stats">
+        <p>
+          Frank Marra
+          <br />
+          Software Engineer
+        </p>
       </div>
       <nav class="container nav">
         <ul>
@@ -84,27 +85,36 @@ const { title, pageDescription } = Astro.props
         </ul>
       </nav>
       <div class="container page-description">
-        <Typewriter pageDescription={pageDescription} client:load />
+        <Typewriter
+          pageDescription={pageDescription}
+          placeHolder={pageDescription}
+          client:load
+        />
       </div>
     </div>
 
     <style>
       .page-wrapper {
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 0.5fr 2fr 5fr;
         justify-items: center;
-        align-items: center;
+        padding-top: 7vh;
+        /* align-items: center; */
       }
 
       .container {
         margin-block: 1.5vh;
-        border: 5px ridge #aeb3ae;
+        border: 8px ridge #aeb3ae;
 
-        background-color: var(--color-bg);
+        background-color: rgba(0, 36, 96, 0.8);
+
         color: var(--color-text);
-        z-index: 1;
+        /* z-index: 1; */
       }
-
+      .social {
+        grid-column: 2 /3;
+        grid-row: 4;
+      }
       .social-links {
         display: flex;
         flex-flow: row nowrap;
@@ -117,12 +127,13 @@ const { title, pageDescription } = Astro.props
         padding: 0 2vw;
       }
       .content {
-        grid-column: 2 / -1;
-        grid-row: 1 / 4;
+        grid-column: 3 / -1;
+        grid-row: 2 / 6;
         width: 50vw;
-        height: 60vh;
-
+        height: 50vh;
+        /* margin: 0; */
         overflow-y: scroll;
+        align-self: center;
       }
       .date,
       .page-description,
@@ -130,20 +141,29 @@ const { title, pageDescription } = Astro.props
         padding: 1vh 2vw;
       }
       .nav {
-        grid-column: 1/2;
+        grid-column: 2;
+        grid-row: 5;
         width: 35%;
       }
 
       .page-description {
-        grid-column: 1 / -1;
+        grid-column: 3 / -1;
         width: 70%;
+        grid-row: 1;
       }
       .profile-pic {
         height: 230px;
         width: 256px;
+        grid-column: 2;
+        grid-row: 2 / 4;
       }
       .stats {
         text-align: center;
+
+        grid-column: 2;
+        grid-row: 1;
+        padding-inline: 2vw;
+        align-self: center;
       }
     </style>
 
@@ -175,7 +195,9 @@ const { title, pageDescription } = Astro.props
 
       body {
         margin: 0;
-        background-image: url('/assets/map001.png');
+        background-image: url('/assets/map001_sm.png');
+        background-color: rgba(72, 72, 72, 0.3);
+        background-blend-mode: soft-light;
         background-repeat: no-repeat;
         background-size: cover;
         height: 100vh;
@@ -189,6 +211,7 @@ const { title, pageDescription } = Astro.props
         text-decoration: none;
         color: var(--color-text);
       }
+
       li:hover {
         animation: blink 0.7s infinite;
         width: 100%;

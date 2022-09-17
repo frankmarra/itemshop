@@ -1,6 +1,6 @@
 ---
 import ProjectImage from '../components/ProjectImage'
-const { title, techUsed, picArray, projectLinks } = Astro.props
+const { title, techUsed, picArray, projectLinks, metaDescription } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
       crossorigin="anonymous"
     ></script>
     <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={metaDescription} />
     <title>{title}</title>
   </head>
   <body>
@@ -21,9 +22,11 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
       <div class="project-links-and-info">
         <h1>{title}</h1>
         <div class="project-links">
-          <a href={projectLinks.url}>Visit</a>
-          <a href={projectLinks.github}> <i class="fa-brands fa-github"></i></a>
-          <a href="/projects/">Back</a>
+          <a href={projectLinks.url} id="deployed-project">Visit</a>
+          <a href={projectLinks.github} id="project-github">
+            <i class="fa-brands fa-github" id="github"></i>
+          </a>
+          <a href="/projects/" id="back-button">Back</a>
         </div>
       </div>
 
@@ -112,7 +115,7 @@ const { title, techUsed, picArray, projectLinks } = Astro.props
         margin: 0;
         background-image: linear-gradient(
           to bottom right,
-          #2410d8,
+          #2414b2,
           var(--color-bg)
         );
         background-repeat: no-repeat;

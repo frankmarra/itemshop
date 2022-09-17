@@ -7,16 +7,24 @@ let pageDescription =
 let letters = pageDescription.split('')
 ---
 
-<Layout title="Frank Marras Portfolio" pageDescription={letters}>
+<Layout
+  title="Frank Marras Portfolio"
+  pageDescription={letters}
+  metaDescription="Frank Marra portfolio landing page."
+>
   <main>
     <div class="title">
-      <h1 class="title-top story">Frank Marras</h1>
-      <h2 class="title-bottom story">Portfolio</h2>
-      <p class="copy-date">©2022</p>
+      <div class="title-top">
+        <h1 class="story title-rise">Frank Marras</h1>
+      </div>
+      <div class="title-bottom">
+        <h2 class="title-fall story">Portfolio</h2>
+        <p class="title-fall copy-date">©2022</p>
+      </div>
     </div>
     <br />
     <a href="/projects/">
-      <h4 class="press-start blink">Choose an option or click here</h4>
+      <h3 class="press-start blink">Choose an option or click here</h3>
     </a>
   </main>
 </Layout>
@@ -37,6 +45,7 @@ let letters = pageDescription.split('')
     font-size: 3rem;
     margin: 0;
   }
+
   .story {
     font-family: storybook;
   }
@@ -46,35 +55,48 @@ let letters = pageDescription.split('')
     text-align: center;
   }
 
-  .title-top {
-    /* position: absolute; */
+  .title-top,
+  .title-bottom {
+    overflow: hidden;
+  }
 
+  .title-rise {
     animation: rise 2s;
   }
-
-  .title-top:after {
+  .title-fall {
+    animation: fall 2s;
   }
-
   .blink {
-    animation: titleblink 0.5s infinite;
+    animation: pressStart 0.5s infinite;
+    animation-delay: 2.5s;
+    color: transparent;
   }
 
-  @keyframes titleblink {
+  @keyframes pressStart {
     from,
     to {
-      color: var(--color-text);
+      color: rgba(0, 36, 96, 0.8);
     }
     50% {
-      color: var(--color-bg);
+      color: var(--color-text);
     }
   }
 
   @keyframes rise {
     from {
-      height: 0%;
+      transform: translateY(20vh);
     }
     to {
-      height: 100%;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fall {
+    from {
+      transform: translateY(-20vh);
+    }
+    to {
+      transform: translateY(0);
     }
   }
 </style>

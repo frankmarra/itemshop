@@ -9,10 +9,16 @@ let pageDescription = 'This is my current resume.'
 let letters = pageDescription.split('')
 ---
 
-<Layout title="Resume" pageDescription={letters}>
+<Layout
+  title="Resume"
+  pageDescription={letters}
+  metaDescription="Frank Marras resume"
+>
   <main>
     <section class="resume-wrapper">
-      <a class="resume-download-button" href={resumeLink}>Download</a>
+      <div class="resume-download-button">
+        <a href={resumeLink}>Download</a>
+      </div>
       <iframe
         title="resume"
         class="resume"
@@ -23,13 +29,16 @@ let letters = pageDescription.split('')
 </Layout>
 
 <style>
-  main {
-    height: 100%;
-  }
   .resume-wrapper {
     display: flex;
     flex-flow: column;
-    text-align: center;
+    align-items: center;
+  }
+
+  .resume-download-button:hover {
+    padding-inline: 2vw;
+    animation: blink 0.7s infinite;
+    cursor: pointer;
   }
 
   iframe.resume {

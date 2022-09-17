@@ -12,14 +12,14 @@ const { href, title, body, thumb } = Astro.props
 <li class="link-card">
   <a href={href}>
     <img src={thumb} alt={title} />
-    <div class="card-details">
+    <!-- <div class="card-details">
       <h3>
         {title}
       </h3>
       <p>
         {body}
       </p>
-    </div>
+    </div> -->
   </a>
 </li>
 
@@ -33,11 +33,11 @@ const { href, title, body, thumb } = Astro.props
     font-size: 0.8rem;
   }
   .link-card {
-    margin-inline: 2vw;
-    padding: 6vh 2vw;
+    margin-inline: 1vw;
+    padding: 2vh 1.3vw;
   }
   .link-card a {
-    display: block;
+    /* display: block; */
     color: var(--color-text);
     text-align: center;
     align-items: center;

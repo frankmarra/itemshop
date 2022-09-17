@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export default function Typewriter({ pageDescription }) {
+export default function Typewriter({ pageDescription, placeHolder }) {
   const [description, setDescription] = useState([])
 
   useEffect(() => {
@@ -15,5 +15,28 @@ export default function Typewriter({ pageDescription }) {
     }
   }
 
-  return <p className="page-description-text">{description}</p>
+  return (
+    <div style={{ position: 'relative' }}>
+      <p
+        style={{
+          visibility: 'hidden',
+          padding: '0',
+          margin: '0'
+        }}
+      >
+        {placeHolder}
+      </p>
+      <p
+        className="page-description-text"
+        style={{
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          margin: '0'
+        }}
+      >
+        {description}
+      </p>
+    </div>
+  )
 }

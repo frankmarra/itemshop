@@ -96,7 +96,7 @@ const { title, pageDescription, metaDescription } = Astro.props
     <style>
       .page-wrapper {
         display: grid;
-        grid-template-columns: 0.5fr 2fr 5fr;
+        grid-template-columns: 0.5fr 2fr 5fr 0.5fr;
         justify-items: center;
         padding-top: 7vh;
         /* align-items: center; */
@@ -114,20 +114,22 @@ const { title, pageDescription, metaDescription } = Astro.props
       .social {
         grid-column: 2 /3;
         grid-row: 4;
+        width: 256px;
       }
       .social-links {
         display: flex;
         flex-flow: row nowrap;
+        justify-content: space-around;
         margin: 1vh 0;
       }
 
       .social-links li {
         font-size: 1.2rem;
         color: var(--color-text);
-        padding: 0 2vw;
+        /* padding: 0 2vw; */
       }
       .content {
-        grid-column: 3 / -1;
+        grid-column: 3 / 4;
         grid-row: 2 / 6;
         width: 50vw;
         height: 50vh;
@@ -143,11 +145,11 @@ const { title, pageDescription, metaDescription } = Astro.props
       .nav {
         grid-column: 2;
         grid-row: 5;
-        width: 35%;
+        /* width: 35%; */
       }
 
       .page-description {
-        grid-column: 3 / -1;
+        grid-column: 3 / 4;
         width: 70%;
         grid-row: 1;
       }
@@ -162,8 +164,9 @@ const { title, pageDescription, metaDescription } = Astro.props
 
         grid-column: 2;
         grid-row: 1;
-        padding-inline: 2vw;
+        /* padding-inline: 2vw; */
         align-self: center;
+        width: 256px;
       }
     </style>
 

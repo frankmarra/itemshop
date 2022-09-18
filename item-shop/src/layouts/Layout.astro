@@ -126,13 +126,15 @@ const { title, pageDescription, metaDescription } = Astro.props
       .social-links li {
         font-size: 1.2rem;
         color: var(--color-text);
+        width: 100%;
         /* padding: 0 2vw; */
+        text-align: center;
       }
       .content {
         grid-column: 3 / 4;
         grid-row: 2 / 6;
         width: 50vw;
-        height: 50vh;
+        height: 45vh;
         /* margin: 0; */
         overflow-y: scroll;
         align-self: center;
@@ -146,6 +148,7 @@ const { title, pageDescription, metaDescription } = Astro.props
         grid-column: 2;
         grid-row: 5;
         /* width: 35%; */
+        padding: 2vh 2vw;
       }
 
       .page-description {
@@ -217,12 +220,14 @@ const { title, pageDescription, metaDescription } = Astro.props
 
       li:hover {
         animation: blink 0.7s infinite;
-        width: 100%;
+        /* width: 100%; */
       }
 
       ul {
         list-style: none;
-        padding: 0 20px;
+        padding: 0;
+        margin: 0;
+        /* padding: 0 20px; */
       }
 
       @keyframes blink {

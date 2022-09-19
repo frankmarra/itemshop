@@ -129,11 +129,11 @@ const { title, pageDescription, metaDescription } = Astro.props
         grid-row: 1;
         align-self: center;
         width: 256px;
-        padding-block: 1.5vh;
+        padding-block: 1vh;
       }
 
       .stats p {
-        margin: 0;
+        margin-block: 0.5vh;
       }
 
       @media screen and (max-width: 600px) {
@@ -281,6 +281,9 @@ const { title, pageDescription, metaDescription } = Astro.props
       }
 
       @media screen and (max-width: 600px) {
+        body {
+          background-image: url('/assets/mobile.png');
+        }
         .profile-pic img {
           width: 128px;
           height: 115px;

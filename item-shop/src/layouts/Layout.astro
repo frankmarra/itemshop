@@ -1,10 +1,7 @@
 ---
-// export interface Props {
-//   title: string
-//   pageDescription: string[]
-// }
 import Typewriter from '../components/Typewriter'
 import MovingPicture from '../components/MovingPicture'
+import SocialLinks from '../components/SocialLinks.astro'
 
 const { title, pageDescription, metaDescription } = Astro.props
 ---
@@ -25,54 +22,30 @@ const { title, pageDescription, metaDescription } = Astro.props
   </head>
   <body>
     <div class="page-wrapper">
+      <!-- Displays social network links -->
       <div class="container social">
-        <ul class="social-links">
-          <li>
-            <a
-              href="https://github.com/frankmarra"
-              target="_blank"
-              id="github"
-              aria-label="github"
-              ><i class="fa-brands fa-github"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/frankrmarra/"
-              target="_blank"
-              id="linkedin"
-              aria-label="linkedin"
-              ><i class="fa-brands fa-linkedin"></i>
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:frankrmarra@gmail.com"
-              target="_blank"
-              id="email"
-              aria-label="email"
-              ><i class="fa-solid fa-envelope"></i>
-            </a>
-          </li>
-        </ul>
+        <SocialLinks />
       </div>
 
-      <!-- <div class="space"></div> -->
+      <!-- Displays content of page -->
       <div class="container content">
         <slot />
       </div>
 
+      <!-- Displays the moving portrait.  The animation is tied to the pageDescription prop. -->
       <div class="container profile-pic">
         <a href="/">
           <MovingPicture pageDescription={pageDescription} client:load />
         </a>
       </div>
-      <div class="space"></div>
+
+      <!-- Displays name and profession -->
       <div class="container stats">
         <p>Frank Marra</p>
-
         <p>Software Engineer</p>
       </div>
+
+      <!-- Nav -->
       <nav class="container nav">
         <ul>
           <li>
@@ -82,6 +55,8 @@ const { title, pageDescription, metaDescription } = Astro.props
           <li><a href="/resume/">Resume</a></li>
         </ul>
       </nav>
+
+      <!-- Displays page description letter by letter until complete.  The length of the description is what controls the moving portrait. -->
       <div class="container page-description">
         <Typewriter
           pageDescription={pageDescription}
@@ -97,7 +72,6 @@ const { title, pageDescription, metaDescription } = Astro.props
         grid-template-columns: 0.5fr 2fr 5fr 0.5fr;
         justify-items: center;
         padding-top: 7vh;
-        /* align-items: center; */
       }
 
       .container {
@@ -107,34 +81,18 @@ const { title, pageDescription, metaDescription } = Astro.props
         background-color: rgba(0, 36, 96, 0.8);
 
         color: var(--color-text);
-        /* z-index: 1; */
       }
       .social {
         grid-column: 2 /3;
         grid-row: 4;
         width: 256px;
       }
-      .social-links {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-around;
-        margin: 1vh 0;
-        padding-inline: 1vw;
-      }
 
-      .social-links li {
-        font-size: 1.2rem;
-        color: var(--color-text);
-        width: 100%;
-        /* padding: 0 2vw; */
-        text-align: center;
-      }
       .content {
         grid-column: 3 / 4;
         grid-row: 2 / 6;
         width: 50vw;
         height: 45vh;
-        /* margin: 0; */
         overflow-y: scroll;
         align-self: center;
       }
@@ -147,7 +105,6 @@ const { title, pageDescription, metaDescription } = Astro.props
       .nav {
         grid-column: 2;
         grid-row: 5;
-        /* width: 35%; */
         padding: 2vh 1vw;
       }
       .nav li {
@@ -170,7 +127,6 @@ const { title, pageDescription, metaDescription } = Astro.props
         flex-flow: column;
         grid-column: 2;
         grid-row: 1;
-        /* padding-inline: 2vw; */
         align-self: center;
         width: 256px;
         padding-block: 1.5vh;
@@ -194,7 +150,6 @@ const { title, pageDescription, metaDescription } = Astro.props
           background-color: rgba(0, 36, 96, 0.8);
 
           color: var(--color-text);
-          /* z-index: 1; */
         }
 
         .stats {
@@ -207,26 +162,16 @@ const { title, pageDescription, metaDescription } = Astro.props
           width: 90%;
           justify-content: space-around;
           font-size: 0.8rem;
-          /* margin-block: 0; */
         }
 
         .social {
           grid-column: 1 / -1;
           grid-row: 5;
           width: 90%;
-          /* margin-block: 0; */
-        }
-        .social-links {
-          display: flex;
-          flex-flow: row;
-          justify-content: space-around;
-          margin: 0.5vh 0;
-          padding-inline: 1vw;
         }
 
         .page-description {
           grid-column: 2 / -1;
-          /* height: 115px; */
           width: 80%;
           grid-row: 3;
           font-size: 0.7rem;
@@ -239,7 +184,6 @@ const { title, pageDescription, metaDescription } = Astro.props
           grid-column: 1 / -1;
           grid-row: 2;
           width: 90%;
-          /* margin-block: 0; */
           padding: 0.5vh 0;
           font-size: 0.8rem;
         }
@@ -318,14 +262,12 @@ const { title, pageDescription, metaDescription } = Astro.props
 
       li:hover {
         animation: blink 0.7s infinite;
-        /* width: 100%; */
       }
 
       ul {
         list-style: none;
         padding: 0;
         margin: 0;
-        /* padding: 0 20px; */
       }
 
       @keyframes blink {

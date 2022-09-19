@@ -1,0 +1,58 @@
+---
+---
+
+<ul class="social-links">
+  <li>
+    <a
+      href="https://github.com/frankmarra"
+      target="_blank"
+      id="github"
+      aria-label="github"
+      ><i class="fa-brands fa-github"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      href="https://www.linkedin.com/in/frankrmarra/"
+      target="_blank"
+      id="linkedin"
+      aria-label="linkedin"
+      ><i class="fa-brands fa-linkedin"></i>
+    </a>
+  </li>
+  <li>
+    <a
+      href="mailto:frankrmarra@gmail.com"
+      target="_blank"
+      id="email"
+      aria-label="email"
+      ><i class="fa-solid fa-envelope"></i>
+    </a>
+  </li>
+</ul>
+
+<style>
+  .social-links {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    margin: 1vh 0;
+    padding-inline: 1vw;
+  }
+
+  .social-links li {
+    font-size: 1.2rem;
+    color: var(--color-text);
+    width: 100%;
+    text-align: center;
+  }
+  @media screen and (max-width: 600px) {
+    .social-links {
+      display: flex;
+      flex-flow: row;
+      justify-content: space-around;
+      margin: 0.5vh 0;
+      padding-inline: 1vw;
+    }
+  }
+</style>

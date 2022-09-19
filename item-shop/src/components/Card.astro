@@ -1,25 +1,10 @@
 ---
-export interface Props {
-  title: string
-  body: string
-  href: string
-  thumb: string
-}
-
-const { href, title, body, thumb } = Astro.props
+const { href, title, thumb } = Astro.props
 ---
 
 <li class="link-card">
   <a href={href}>
     <img src={thumb} alt={title} />
-    <!-- <div class="card-details">
-      <h3>
-        {title}
-      </h3>
-      <p>
-        {body}
-      </p>
-    </div> -->
   </a>
 </li>
 
@@ -38,7 +23,6 @@ const { href, title, body, thumb } = Astro.props
     scroll-snap-align: start;
   }
   .link-card a {
-    /* display: block; */
     color: var(--color-text);
     text-align: center;
     align-items: center;

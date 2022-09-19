@@ -173,6 +173,11 @@ const { title, pageDescription, metaDescription } = Astro.props
         /* padding-inline: 2vw; */
         align-self: center;
         width: 256px;
+        padding-block: 1.5vh;
+      }
+
+      .stats p {
+        margin: 0;
       }
 
       @media screen and (max-width: 600px) {
@@ -227,6 +232,7 @@ const { title, pageDescription, metaDescription } = Astro.props
           font-size: 0.7rem;
           margin-inline: 0;
           justify-self: left;
+          overflow: hidden;
         }
 
         .nav {

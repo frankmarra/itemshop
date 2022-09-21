@@ -1,6 +1,9 @@
 ---
 import ProjectImage from '../components/ProjectImage'
-const { title, techUsed, picArray, projectLinks, metaDescription } = Astro.props
+import ProjectHeader from '../components/ProjectHeader.astro'
+import Card from '../components/Card.astro'
+const { title, techUsed, picArray, projectLinks, metaDescription, boxArt } =
+  Astro.props
 ---
 
 <!DOCTYPE html>
@@ -19,69 +22,59 @@ const { title, techUsed, picArray, projectLinks, metaDescription } = Astro.props
   </head>
   <body>
     <div class="page-wrapper">
-      <div class="project-links-and-info">
-        <h1>{title}</h1>
-        <div class="project-links">
-          <a href={projectLinks.url} id="deployed-project">Visit</a>
-          <a href={projectLinks.github} id="project-github">
-            <i class="fa-brands fa-github" id="github"></i>
-          </a>
-          <a href="/projects/" id="back-button">Back</a>
-        </div>
-      </div>
+      <ProjectHeader
+        boxArt={boxArt}
+        title={title}
+        projectLinks={projectLinks}
+      />
 
       <div class="container picture-array">
-        <ProjectImage picArray={picArray} title={title} client:load />
-      </div>
-      <div class="container content">
-        <slot />
+        <!-- <ProjectImage picArray={picArray} title={title} client:load /> -->
+        <ul>
+          {
+            picArray.map((pic, index) => {
+              return <Card thumb={pic} key={index} title={title} href={'#'} />
+            })
+          }
+        </ul>
       </div>
 
       <div class="container tech-used" set:html={techUsed}></div>
+
+      <div class="container content">
+        <slot />
+      </div>
     </div>
     <style>
       .page-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* border: 5px ridge #aeb3ae; */
+        display: flex;
+        flex-flow: column;
         justify-items: center;
         align-items: center;
       }
       .container {
         margin-block: 1.5vh;
-        border: 5px ridge #aeb3ae;
-        background-color: transparent;
+        border: 5px ridge #7cd1ff;
+        box-shadow: 0 0 4px 3px rgba(252, 252, 252, 0.5);
+
+        background-color: rgba(49, 197, 255, 0.5);
         color: var(--color-text);
         z-index: 1;
       }
-      .project-links-and-info {
-        grid-column: 1 / -1;
-        color: var(--color-text);
-      }
 
-      .project-links {
-        display: flex;
-        justify-content: space-around;
-        font-size: 1.4rem;
-      }
-
-      .project-links a {
-        padding-inline: 2vw;
-      }
       .content {
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-        width: 30vw;
-        height: 60vh;
         overflow-y: scroll;
+        width: 80%;
       }
 
       .picture-array {
-        grid-column: 2/ -1;
-        grid-row: 2 / 3;
-        width: 500px;
-        height: 390px;
+        display: flex;
         overflow: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        align-items: center;
+        width: 80vw;
       }
 
       .tech-used {

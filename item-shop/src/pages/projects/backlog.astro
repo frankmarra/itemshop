@@ -1,0 +1,36 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
+
+const techUsed = 'React | express | MongoDB'
+
+const picArray = [
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Backlog_Home_Screen_ec3xgj.png',
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Backlog_game_about_oerntr.png'
+]
+
+const projectLinks = {
+  url: 'https://franksbacklog.herokuapp.com/',
+  github: 'https://github.com/frankmarra/Backlog'
+}
+---
+
+<ProjectLayout
+  title="Backlog"
+  techUsed={techUsed}
+  picArray={picArray}
+  projectLinks={projectLinks}
+  boxArt="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Backlog_box_uo6t2u.png"
+  nextProject="/projects/record-reveal/"
+  lastProject="/projects/worktrack/"
+>
+  <main>
+    <p>
+      This is the second project I made during the GA Software Immersive course.
+      We were given one week to develop an app using React and MongoDB that had
+      at least two models and full CRUD on one of them.
+    </p><p>
+      For this project, I pulled the game data from the RAWG API and created a
+      database of users, games and notes, with full CRUD on each.
+    </p>
+  </main>
+</ProjectLayout>

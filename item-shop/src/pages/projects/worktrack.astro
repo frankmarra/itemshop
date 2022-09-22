@@ -1,0 +1,42 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
+
+const techUsed = 'React | express | PostgreSQL'
+
+const picArray = [
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294874/Portfolio/project%20pictures/Worktrack_landing_page_hbpxjy.png',
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Worktrack_hours_page_yfeqvg.png'
+]
+
+const projectLinks = {
+  url: 'https://worktrack-frontend.herokuapp.com/',
+  github: 'https://github.com/MC-JSON/WorkTrack-FrontEnd'
+}
+---
+
+<ProjectLayout
+  title="WorkTrack"
+  techUsed={techUsed}
+  picArray={picArray}
+  projectLinks={projectLinks}
+  boxArt="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Worktrack_box_piuent.png"
+  nextProject="/projects/backlog/"
+  lastProject="/projects/colab/"
+>
+  <main>
+    <p>
+      Work-Track was the third project for the GA Software Immersive course. It
+      was also a group project between myself and two of my fellow students, <a
+        href="https://www.linkedin.com/in/jasonwmccoy/"
+        target="_blank">Jason Mccoy</a
+      > and <a href="https//www.linkedin.com/in/bryvn1xx/" target="_blank"
+        >Bryan Sanchez</a
+      >. This was the first larger scale project that I worked on, and it was
+      very enjoyable to be able to work on this as a team.
+    </p><p>
+      We were given one week to create an app with React, PostgreSQL, and
+      Sequelize. I created and deployed the database, which consisted of six
+      models, as well as created and styled the the entries homepage of the app.
+    </p>
+  </main>
+</ProjectLayout>

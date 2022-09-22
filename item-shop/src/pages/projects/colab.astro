@@ -1,0 +1,46 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
+
+const techUsed = 'React | express | PostgreSQL'
+
+const picArray = [
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Colab_landing_page_tlhyu0.png',
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Colab_profile_view_e2gix2.png'
+]
+
+const projectLinks = {
+  url: 'https://frankcolab.herokuapp.com/',
+  github: 'https://github.com/frankmarra/Co-Lab-FrontEnd'
+}
+---
+
+<ProjectLayout
+  title="Co-Lab"
+  techUsed={techUsed}
+  picArray={picArray}
+  projectLinks={projectLinks}
+  boxArt="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Colab_box_art_yst5nd.png"
+  nextProject="/projects/worktrack/"
+  lastProject="/projects/dcm/"
+>
+  <main>
+    <p>
+      Co-Lab is the fourth and final project for the GA Software Engineering
+      Immersive course. We were given twelve days for this project, and it had
+      to include at least three models with full CRUD on one of them.
+    </p><p>
+      Originally, I built the database for this project with Python and Django,
+      but due to CORS and auth issues, I had to make a decision a few days in to
+      drop that database and rebuild it using PostgreSql and Sequelize. While
+      frustrating, it also proved to be very rewarding, as I learned how to
+      create a database with Python and Django, and was also able to further my
+      skills with PostgreSQL and Sequelize.
+    </p><p>
+      There are eleven models with about half of them being a many to many
+      relationship, with full CRUD on all of them for the administrator.
+    </p><p>
+      This had been a project I wanted to create for a while, as I am constantly
+      writing songs and looking for people to collaborate with.
+    </p>
+  </main>
+</ProjectLayout>

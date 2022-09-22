@@ -1,69 +1,85 @@
 ---
-const { boxArt, title, projectLinks } = Astro.props
+const { boxArt, title, projectLinks, techUsed, nextProject, lastProject } =
+  Astro.props
 ---
 
 <header>
   <div class="project-links-and-info">
+    <!-- This is the box art for the current project.  Users can click on the arrows to go to the next or previous project. -->
     <div class="box-art-nav">
-      <i class="fa-solid fa-caret-left"></i>
+      <a href={lastProject}><i class="fa-solid fa-caret-left"></i></a>
       <img src={boxArt} alt={title} />
-      <i class="fa-solid fa-caret-right"></i>
+      <a href={nextProject}><i class="fa-solid fa-caret-right"></i></a>
     </div>
+
+    <!-- This is the title of the project, the stack used to build it, and the links associated with it. -->
     <div class="title-and-links">
       <h1>{title}</h1>
+      <div class="tech-used">{techUsed}</div>
       <div class="project-links">
-        <a href={projectLinks.url} id="deployed-project">Visit</a>
+        <a href={projectLinks.url} id="deployed-project">Live Site</a>
         <a href={projectLinks.github} id="project-github">
-          <i class="fa-brands fa-github" id="github"></i>
+          <i class="fa-brands fa-github" id="github"></i>{' '}Code
         </a>
-        <a href="/projects/" id="back-button">Back</a>
       </div>
     </div>
-    <!-- Displays name and profession -->
-    <div class="container stats">
+
+    <!-- Displays name and profession and link back to main portfolio -->
+    <div class="stats">
       <p>Frank Marra</p>
       <p>Software Engineer</p>
+      <a href="/projects/" id="back-button">Back</a>
     </div>
   </div>
 </header>
 
 <style>
   header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100%;
-    color: var(--color-text);
+  }
+  h1 {
+    margin: 0;
   }
   .project-links-and-info {
     display: flex;
-    position: relative;
+    color: var(--color-text);
+    justify-content: space-around;
   }
 
   .project-links-and-info img {
-    width: 77.5px;
-    height: 109px;
-  }
-
-  .title-and-links {
-    display: flex;
-    flex-flow: column;
+    width: auto;
+    height: 140px;
   }
 
   .box-art-nav {
     font-size: 2rem;
     display: flex;
     align-items: center;
-    margin-inline: 0.5vw;
+    justify-content: space-evenly;
+    /* width: 30%; */
+    margin: 1.5vh 4vw;
+  }
+
+  .title-and-links {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
   }
 
   .project-links {
     display: flex;
-    justify-content: space-around;
-    font-size: 1.4rem;
+    justify-content: space-evenly;
+    font-size: 1.2rem;
   }
 
   .project-links a {
+    border: 1px ridge #7cd1ff;
+    border-radius: 10px;
+    margin-inline: 1vw;
     padding-inline: 2vw;
+  }
+
+  .stats {
   }
 </style>

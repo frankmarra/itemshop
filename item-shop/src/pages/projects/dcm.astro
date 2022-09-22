@@ -1,35 +1,36 @@
 ---
 import ProjectLayout from '../../layouts/ProjectLayout.astro'
 
-const techUsed = `
-  <ul class="tech-used-list" style="font-size: 1.1rem;">
-    Built With
-    <li>
-      <img
-        style="height: 6vh;"
-        src="https://res.cloudinary.com/silverbeard/image/upload/v1661359286/Portfolio/next-js-logo-7929BCD36F-seeklogo.com_tvqole.png"
-        alt="NextJS"
-        id="next"
-      />
-    </li>
-    <li>
-      <i class="fa-brands fa-css3"></i>
-    </li>
-    <li>
-      <img
-      style="height: 6vh;"
-        src="https://res.cloudinary.com/silverbeard/image/upload/v1652931906/Portfolio/116px-PostgreSQL_Logo.1_Color_Black_n5r32u.png"
-        alt="PostgreSQL"
-        id="postgres"
-      />
-    </li>
-  </ul>
-`
+// const techUsed = `
+//   <ul class="tech-used-list" style="font-size: 1.1rem;">
+//     Built With
+//     <li>
+//       <img
+//         style="height: 6vh;"
+//         src="https://res.cloudinary.com/silverbeard/image/upload/v1661359286/Portfolio/next-js-logo-7929BCD36F-seeklogo.com_tvqole.png"
+//         alt="NextJS"
+//         id="next"
+//       />
+//     </li>
+//     <li>
+//       <i class="fa-brands fa-css3"></i>
+//     </li>
+//     <li>
+//       <img
+//       style="height: 6vh;"
+//         src="https://res.cloudinary.com/silverbeard/image/upload/v1652931906/Portfolio/116px-PostgreSQL_Logo.1_Color_Black_n5r32u.png"
+//         alt="PostgreSQL"
+//         id="postgres"
+//       />
+//     </li>
+//   </ul>
+// `
+
+const techUsed = 'Next.js | express | PostgreSQL'
 
 const picArray = [
   `https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/DCM_Generate_Codes_cmfsgd.png`,
-  `https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/DCM_Add_Codes_xo1mnr.png`,
-  `https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/DCM_landing_page_cekvzp.png`
+  `https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/DCM_Add_Codes_xo1mnr.png`
 ]
 
 const projectLinks = {
@@ -43,7 +44,9 @@ const projectLinks = {
   techUsed={techUsed}
   picArray={picArray}
   projectLinks={projectLinks}
-  boxArt={'https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/DCM_Box_bm4n7x.png'}
+  boxArt="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/DCM_Box_bm4n7x.png"
+  nextProject="/projects/colab/"
+  lastProject="/projects/record-reveal/"
 >
   <main>
     <p>
@@ -74,11 +77,19 @@ const projectLinks = {
     <p>
       The amount I learned while building this project is so much more than what
       is contained in this brief case study, and it would not have been possible
-      without the help of Ryan Mulligan, Jon Black, and Tom DuHamel.
+      without the help of <a href="https://ryanmulligan.dev" target="_blank"
+        >Ryan Mulligan</a
+      >,
+      <a href="https://jon.black" target="_blank">Jon Black</a>, and <a
+        href="https://iheartblank.net"
+        target="_blank">Tom DuHamel</a
+      >.
     </p>
     <p>
-      I would especially like to thank Dave Mulligan for giving me the
-      opportunity to build this site.
+      I would especially like to thank <a
+        href="https://mystery-circles.com"
+        target="_blank">Dave Mulligan</a
+      > for giving me the opportunity to build this site.
     </p>
   </main>
 </ProjectLayout>

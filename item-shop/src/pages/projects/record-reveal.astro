@@ -1,0 +1,46 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro'
+
+const techUsed = 'HTML, CSS, JavaScript'
+
+const picArray = [
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Record_Reveal_game_qhwj1g.png',
+  'https://res.cloudinary.com/silverbeard/image/upload/v1663294873/Portfolio/project%20pictures/Record_Reveal_Win_up7csj.png'
+]
+
+const projectLinks = {
+  url: 'https://franksmatchgame.surge.sh/',
+  github: 'https://github.com/frankmarra/Album_Art_Match_Game'
+}
+---
+
+<ProjectLayout
+  title="Record Reveal"
+  techUsed={techUsed}
+  picArray={picArray}
+  projectLinks={projectLinks}
+  boxArt="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Record_reveal_box_lsytli.png"
+  nextProject="/projects/dcm/"
+  lastProject="/projects/backlog/"
+>
+  <main>
+    <p>
+      Record Reveal was the first project I made during the GA Software
+      Immersive course. We were given one week to make a game using only HTML,
+      CSS, and JavaScript.
+    </p><p>
+      The original idea for the project was going to use the Spotify API to
+      allow users to log into their account, pull their playlists, and be able
+      to play the game with the playlists album art while also listening to said
+      playlist. This proved to be a bit beyond my skill level at the time, and I
+      instead used the Discogs API to pull in random album titles from a few
+      record labels that I enjoy.
+    </p><p>
+      I also implemented a logic that saves your scores in local storage, a la
+      Wordle, so you can try and beat your high scores.
+    </p><p>
+      I plan to revisit this project in the future to make it what I originally
+      envisioned.
+    </p>
+  </main>
+</ProjectLayout>

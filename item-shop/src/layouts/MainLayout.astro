@@ -1,0 +1,226 @@
+---
+import Layout from './Layout.astro'
+import Typewriter from '../components/Typewriter'
+import MovingPicture from '../components/MovingPicture'
+import SocialLinks from '../components/SocialLinks.astro'
+
+const { title, pageDescription, metaDescription } = Astro.props
+const nav = [
+  {
+    title: 'About Me',
+    url: '/about/'
+  },
+  {
+    title: 'Projects',
+    url: '/projects/'
+  },
+  {
+    title: 'Resume',
+    url: '/resume/'
+  }
+]
+---
+
+<Layout title={title} metaDescription={metaDescription}>
+  <div class="page-wrapper">
+    <div class="container stats">
+      <h1>
+        <span> Frank Marra</span>
+        <span> Software Engineer</span>
+      </h1>
+    </div>
+
+    <div class="container social">
+      <SocialLinks />
+    </div>
+
+    <div class="container page-description">
+      <Typewriter
+        pageDescription={pageDescription}
+        placeHolder={pageDescription}
+        client:load
+      />
+    </div>
+
+    <div class="container content">
+      <slot />
+    </div>
+
+    <nav class="container nav">
+      <ul>
+        {
+          nav.map(({ title, url }) => (
+            <li>
+              <a
+                href={url}
+                aria-current={Astro.props.title === title ? 'page' : undefined}
+              >
+                {title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="container profile-pic">
+      <a href="/">
+        <span class="visually-hidden">Go back to homepage</span>
+        <MovingPicture pageDescription={pageDescription} client:load />
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  h1 {
+    font-size: 1rem;
+  }
+  .page-wrapper {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 5fr 0.5fr;
+    justify-items: center;
+    padding-top: 7vh;
+  }
+
+  .container {
+    margin-block: 1.5vh;
+    border: 8px ridge #aeb3ae;
+
+    background-color: rgba(0, 36, 96, 0.8);
+
+    color: var(--color-text);
+  }
+  .social {
+    grid-column: 2 /3;
+    grid-row: 4;
+    width: 256px;
+  }
+
+  .content {
+    grid-column: 3 / 4;
+    grid-row: 2 / 6;
+    width: 60vw;
+    height: 45vh;
+    overflow-y: scroll;
+    align-self: center;
+  }
+
+  .date,
+  .page-description,
+  .content {
+    padding: 1vh 2vw;
+  }
+  .nav {
+    grid-column: 2;
+    grid-row: 5;
+    padding: 2vh 1vw;
+  }
+  .nav li {
+    padding-inline: 1vw;
+  }
+  .page-description {
+    grid-column: 3 / 4;
+    width: 70%;
+    grid-row: 1;
+    align-self: center;
+  }
+  .profile-pic {
+    height: 230px;
+    width: 256px;
+    grid-column: 2;
+    grid-row: 2 / 4;
+  }
+  .stats {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    width: 256px;
+    padding-block: 1vh;
+  }
+
+  .stats p {
+    margin-block: 0.5vh;
+  }
+
+  @media screen and (max-width: 800px) {
+    .page-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 0;
+    }
+
+    .container {
+      margin-block: 1.5vh;
+      border: 3px ridge #aeb3ae;
+
+      background-color: rgba(0, 36, 96, 0.8);
+
+      color: var(--color-text);
+    }
+
+    .stats {
+      text-align: center;
+      display: flex;
+      flex-flow: row;
+      grid-column: 1 / -1;
+      grid-row: 1;
+      align-self: auto;
+      width: 90%;
+      justify-content: space-around;
+      font-size: 0.8rem;
+    }
+
+    .social {
+      grid-column: 1 / -1;
+      grid-row: 5;
+      width: 90%;
+    }
+
+    .page-description {
+      grid-column: 2 / -1;
+      width: 80%;
+      grid-row: 3;
+      font-size: 0.7rem;
+      margin-inline: 0;
+      justify-self: left;
+      overflow: hidden;
+    }
+
+    .nav {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      width: 90%;
+      padding: 0.5vh 0;
+      font-size: 0.8rem;
+    }
+
+    .nav ul {
+      display: flex;
+      justify-content: space-around;
+    }
+    .nav li {
+      padding-inline: 1vw;
+    }
+
+    .content {
+      grid-column: 1 / -1;
+      grid-row: 4;
+      width: 85vw;
+      height: 25vh;
+
+      overflow-y: scroll;
+      align-self: center;
+    }
+
+    .profile-pic {
+      height: 115px;
+      width: 128px;
+      grid-column: 1;
+      grid-row: 3;
+    }
+  }
+</style>

@@ -10,7 +10,6 @@ export default function MovingPicture({ pageDescription }) {
 
   const movingPic = () => {
     let mouthMove = Math.floor(Math.random() * 4)
-    console.log(mouthMove)
     if (pageDescription.length > 0) {
       let nextLetter = pageDescription.shift()
       if (mouthMove <= 2) {

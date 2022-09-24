@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import MainLayout from '../layouts/MainLayout.astro'
 import Card from '../components/Card.astro'
 
 let pageDescription =
@@ -8,7 +8,7 @@ let pageDescription =
 let letters = pageDescription.split('')
 ---
 
-<Layout
+<MainLayout
   title="Projects"
   pageDescription={letters}
   metaDescription="This is the projects page for Frank Marras portfolio that shows what he has worked on."
@@ -47,7 +47,7 @@ let letters = pageDescription.split('')
       />
     </ul>
   </main>
-</Layout>
+</MainLayout>
 
 <style>
   .carousel {

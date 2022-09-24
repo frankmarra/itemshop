@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import MainLayout from '../layouts/MainLayout.astro'
 
 let pageDescription =
   "Hi, I'm Frank Marra.  Thanks for visiting my portfolio.  Look around and have fun."
@@ -7,18 +7,23 @@ let pageDescription =
 let letters = pageDescription.split('')
 ---
 
-<Layout
+<MainLayout
   title="Frank Marras Portfolio"
   pageDescription={letters}
   metaDescription="Frank Marra portfolio landing page."
 >
   <main>
     <div class="title">
-      <div class="title-top">
-        <h1 class="story title-rise">Frank Marras</h1>
-      </div>
+      <h2>
+        <div class="title-top">
+          <span class="story title-rise">Frank Marras</span>
+        </div>
+        <div class="title-bottom">
+          <span class="title-fall story">Portfolio</span>
+        </div>
+      </h2>
+
       <div class="title-bottom">
-        <h2 class="title-fall story">Portfolio</h2>
         <p class="title-fall copy-date">©2022</p>
       </div>
     </div>
@@ -27,7 +32,7 @@ let letters = pageDescription.split('')
       <h3 class="press-start blink">Choose an option or click here</h3>
     </a>
   </main>
-</Layout>
+</MainLayout>
 
 <style>
   main {
@@ -53,11 +58,20 @@ let letters = pageDescription.split('')
   .title {
     position: relative;
     text-align: center;
+    font-size: 3rem;
+  }
+
+  .title span {
+    display: block;
   }
 
   .title-top,
   .title-bottom {
     overflow: hidden;
+  }
+
+  .copy-date {
+    font-size: 1rem;
   }
 
   .title-rise {

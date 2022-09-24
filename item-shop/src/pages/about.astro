@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import MainLayout from '../layouts/MainLayout.astro'
 
 let pageDescription =
   'I am a full-stack developer / musician / project manager with a passion for efficiancy and creating.'
@@ -7,7 +7,7 @@ let pageDescription =
 let letters = pageDescription.split('')
 ---
 
-<Layout
+<MainLayout
   title="About Me"
   pageDescription={letters}
   metaDescription="Frank Marras portfolio about me section.  Provides a simple bio."
@@ -27,8 +27,7 @@ let letters = pageDescription.split('')
       </p>
       <p>
         My professional career started with audio engineering. I have played,
-        tracked, and mixed dozens of albums, and still do from time to time. I
-        have also been fortunate enough to tour across the world.
+        tracked, and mixed dozens of albums, and still do from time to time.
       </p>
       <p>Music: check.</p>
       <p>
@@ -50,12 +49,10 @@ let letters = pageDescription.split('')
       <p>Technology: check.</p>
     </div>
   </main>
-</Layout>
+</MainLayout>
 
 <style>
   p {
-    /* font-family: micro-six; */
-    /* font-size: 0.9rem; */
     line-height: 1.25rem;
     letter-spacing: 0.08rem;
   }

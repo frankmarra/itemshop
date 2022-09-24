@@ -2,6 +2,7 @@
 import ProjectImage from '../components/ProjectImage'
 import ProjectHeader from '../components/ProjectHeader.astro'
 import Card from '../components/Card.astro'
+import ProjectNav from '../components/ProjectNav.astro'
 const {
   title,
   techUsed,
@@ -30,39 +31,57 @@ const {
   </head>
   <body>
     <div class="page-wrapper">
-      <ProjectHeader
-        boxArt={boxArt}
-        title={title}
-        projectLinks={projectLinks}
-        techUsed={techUsed}
-        nextProject={nextProject}
-        lastProject={lastProject}
-      />
-
-      <div class="container picture-array">
-        <ul>
-          {
-            picArray.map((pic) => {
-              return (
-                <li>
-                  <img src={pic} />
-                </li>
-              )
-            })
-          }
-        </ul>
+      <!-- Displays name and profession and link back to main portfolio -->
+      <div class="stats">
+        <p>Frank Marra</p>
+        <p>Software Engineer</p>
+        <a href="/projects/" id="back-button">Back</a>
       </div>
 
-      <div class="container content">
-        <slot />
+      <ProjectNav />
+
+      <div class="container project-info">
+        <!-- This is the title of the project, the stack used to build it, and the links associated with it. -->
+        <div class="title-and-links">
+          <h1>{title}</h1>
+          <div class="tech-used">{techUsed}</div>
+          <div class="project-links">
+            <a href={projectLinks.url} id="deployed-project">Live Site</a>
+            <a href={projectLinks.github} id="project-github">
+              <i class="fa-brands fa-github" id="github"></i>{' '}Code
+            </a>
+          </div>
+        </div>
+        <div class="picture-array">
+          <ul>
+            {
+              picArray.map((pic) => {
+                return (
+                  <li>
+                    <img src={pic} />
+                  </li>
+                )
+              })
+            }
+          </ul>
+        </div>
+
+        <div class="content">
+          <slot />
+        </div>
       </div>
     </div>
     <style>
       .page-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        height: 100vh;
+      }
+
+      .stats {
         display: flex;
-        flex-flow: column;
-        justify-items: center;
-        align-items: center;
+        flex-flow: row;
+        grid-column: 1 / -1;
       }
       .container {
         margin-block: 1.5vh;
@@ -76,7 +95,8 @@ const {
 
       .content {
         overflow-y: scroll;
-        width: 80%;
+        grid-column: 2 / -1;
+        /* width: 80%; */
         height: 20vh;
         line-height: 1.25rem;
         letter-spacing: 0.08rem;
@@ -88,16 +108,16 @@ const {
         overflow-x: scroll;
         scroll-snap-type: x mandatory;
         overscroll-behavior-x: contain; */
-        align-items: center;
+        /* align-items: center;
         justify-content: center;
-        width: 90vw;
+        width: 90vw; */
       }
 
-      .tech-used {
+      /* .tech-used {
         grid-column: 1 / -1;
         grid-row: 3 / 4;
         width: 70%;
-      }
+      } */
     </style>
     <style is:global>
       @font-face {
@@ -157,10 +177,10 @@ const {
         margin-inline: 2vw;
       }
 
-      .picture-array img {
-        width: auto;
-        height: 420px;
-      }
+      /* .picture-array img {
+        width: 35vw;
+        height: auto;
+      } */
       @keyframes blink {
         from,
         to {

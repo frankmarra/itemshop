@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro'
+import MainLayout from '../layouts/MainLayout.astro'
 
 const resumeLink =
   'https://docs.google.com/document/d/1q-33FVkjh5DkG0LgGTEdNd-UdJnrkYmfElnjHYoTVzM/edit?usp=sharing'
@@ -9,7 +9,7 @@ let pageDescription = 'This is my current resume.'
 let letters = pageDescription.split('')
 ---
 
-<Layout
+<MainLayout
   title="Resume"
   pageDescription={letters}
   metaDescription="Frank Marras resume"
@@ -26,7 +26,7 @@ let letters = pageDescription.split('')
       ></iframe>
     </section>
   </main>
-</Layout>
+</MainLayout>
 
 <style>
   .resume-wrapper {

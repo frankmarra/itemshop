@@ -1,0 +1,60 @@
+---
+import Card from './Card.astro'
+---
+
+<ul class="project-nav">
+  <li>
+    <Card
+      title="Download Code Manager"
+      body="An app that lets record labels store and distribute codes they received from bandcamp to redeem free albums"
+      href="/projects/dcm"
+      thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/DCM_Box_bm4n7x.png"
+    />
+  </li>
+  <li>
+    <Card
+      title="Co-Lab"
+      body="Music social network where users can post unfished songs and collaborate with other artists to finish them"
+      href="/projects/colab"
+      thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Colab_box_art_yst5nd.png"
+    />
+  </li>
+  <li>
+    <Card
+      title="Work-Track"
+      body="Time management app"
+      href="/projects/worktrack"
+      thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Worktrack_box_piuent.png"
+    />
+  </li>
+  <li>
+    <Card
+      title="Backlog"
+      body="App to track which games you are currently playing, want to play, and have finished"
+      href="/projects/backlog"
+      thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Backlog_box_uo6t2u.png"
+    />
+  </li>
+  <li>
+    <Card
+      title="Record Reveal"
+      body="A simple match game that reveals album covers"
+      href="/projects/record-reveal"
+      thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Record_reveal_box_lsytli.png"
+    />
+  </li>
+</ul>
+
+<style is:global>
+  .project-nav {
+    display: flex;
+    flex-flow: column;
+    height: 100vh;
+    overflow-y: scroll;
+  }
+
+  .project-nav img {
+    height: auto;
+    width: 10vw;
+  }
+</style>

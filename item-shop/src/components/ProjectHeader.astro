@@ -5,14 +5,12 @@ const { boxArt, title, projectLinks, techUsed, nextProject, lastProject } =
 
 <header>
   <div class="project-links-and-info">
-    <!-- This is the box art for the current project.  Users can click on the arrows to go to the next or previous project. -->
     <div class="box-art-nav">
       <a href={lastProject}><i class="fa-solid fa-caret-left"></i></a>
       <img src={boxArt} alt={title} />
       <a href={nextProject}><i class="fa-solid fa-caret-right"></i></a>
     </div>
 
-    <!-- This is the title of the project, the stack used to build it, and the links associated with it. -->
     <div class="title-and-links">
       <h1>{title}</h1>
       <div class="tech-used">{techUsed}</div>
@@ -24,7 +22,6 @@ const { boxArt, title, projectLinks, techUsed, nextProject, lastProject } =
       </div>
     </div>
 
-    <!-- Displays name and profession and link back to main portfolio -->
     <div class="stats">
       <p>Frank Marra</p>
       <p>Software Engineer</p>

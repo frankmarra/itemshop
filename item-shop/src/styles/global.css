@@ -57,6 +57,10 @@ a {
   color: var(--color-text);
 }
 
+/* a:hover {
+  animation: blink 0.7s infinite;
+} */
+
 a[aria-current='page'] {
   color: #0fce3d;
 }

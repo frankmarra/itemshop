@@ -3,13 +3,11 @@ import MainLayout from '../layouts/MainLayout.astro'
 
 let pageDescription =
   "Hi, I'm Frank Marra.  Thanks for visiting my portfolio.  Look around and have fun."
-
-let letters = pageDescription.split('')
 ---
 
 <MainLayout
   title="Frank Marras Portfolio"
-  pageDescription={letters}
+  pageDescription={pageDescription}
   metaDescription="Frank Marra portfolio landing page."
 >
   <main>
@@ -114,7 +112,7 @@ let letters = pageDescription.split('')
     }
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     main {
       display: flex;
       flex-flow: column;

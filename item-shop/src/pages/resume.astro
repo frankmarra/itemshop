@@ -5,13 +5,11 @@ const resumeLink =
   'https://docs.google.com/document/d/1q-33FVkjh5DkG0LgGTEdNd-UdJnrkYmfElnjHYoTVzM/edit?usp=sharing'
 
 let pageDescription = 'This is my current resume.'
-
-let letters = pageDescription.split('')
 ---
 
 <MainLayout
   title="Resume"
-  pageDescription={letters}
+  pageDescription={pageDescription}
   metaDescription="Frank Marras resume"
 >
   <main>

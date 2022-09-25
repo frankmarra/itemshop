@@ -11,6 +11,10 @@ const nav = [
     url: '/about/'
   },
   {
+    title: 'Blog',
+    url: '/blog/'
+  },
+  {
     title: 'Projects',
     url: '/projects/'
   },
@@ -19,6 +23,8 @@ const nav = [
     url: '/resume/'
   }
 ]
+
+let letters = pageDescription.split('')
 ---
 
 <Layout title={title} metaDescription={metaDescription}>
@@ -36,7 +42,7 @@ const nav = [
 
     <div class="container page-description">
       <Typewriter
-        pageDescription={pageDescription}
+        pageDescription={letters}
         placeHolder={pageDescription}
         client:load
       />
@@ -66,7 +72,7 @@ const nav = [
     <div class="container profile-pic">
       <a href="/">
         <span class="visually-hidden">Go back to homepage</span>
-        <MovingPicture pageDescription={pageDescription} client:load />
+        <MovingPicture pageDescription={letters} client:load />
       </a>
     </div>
   </div>
@@ -101,9 +107,9 @@ const nav = [
     grid-column: 3 / 4;
     grid-row: 2 / 6;
     width: 60vw;
-    height: 45vh;
+    max-height: 45vh;
     overflow-y: scroll;
-    align-self: center;
+    align-self: flex-start;
   }
 
   .date,

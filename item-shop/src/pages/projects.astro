@@ -4,13 +4,11 @@ import Card from '../components/Card.astro'
 
 let pageDescription =
   'These are apps that I have built.  Why not grab a free album from the Download Code Manager, or try and get a high score on Record Reveal?'
-
-let letters = pageDescription.split('')
 ---
 
 <MainLayout
   title="Projects"
-  pageDescription={letters}
+  pageDescription={pageDescription}
   metaDescription="This is the projects page for Frank Marras portfolio that shows what he has worked on."
 >
   <main>
@@ -18,31 +16,31 @@ let letters = pageDescription.split('')
       <Card
         title="Download Code Manager"
         body="An app that lets record labels store and distribute codes they received from bandcamp to redeem free albums"
-        href="/projects/dcm"
+        href="https://downloadcodemanager.com/labels/mystery-circles"
         thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/DCM_Box_bm4n7x.png"
       />
       <Card
         title="Co-Lab"
         body="Music social network where users can post unfished songs and collaborate with other artists to finish them"
-        href="/projects/colab"
+        href="https://frankcolab.herokuapp.com/"
         thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Colab_box_art_yst5nd.png"
       />
       <Card
         title="Work-Track"
         body="Time management app"
-        href="/projects/worktrack"
+        href="https://worktrack-frontend.herokuapp.com/"
         thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Worktrack_box_piuent.png"
       />
       <Card
         title="Backlog"
         body="App to track which games you are currently playing, want to play, and have finished"
-        href="/projects/backlog"
+        href="https://franksbacklog.herokuapp.com/"
         thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Backlog_box_uo6t2u.png"
       />
       <Card
         title="Record Reveal"
         body="A simple match game that reveals album covers"
-        href="/projects/record-reveal"
+        href="https://franksmatchgame.surge.sh/"
         thumb="https://res.cloudinary.com/silverbeard/image/upload/v1663298131/Portfolio/project%20pictures/Box%20art/Record_reveal_box_lsytli.png"
       />
     </ul>

@@ -3,13 +3,11 @@ import MainLayout from '../layouts/MainLayout.astro'
 
 let pageDescription =
   'I am a full-stack developer / musician / project manager with a passion for efficiancy and creating.'
-
-let letters = pageDescription.split('')
 ---
 
 <MainLayout
   title="About Me"
-  pageDescription={letters}
+  pageDescription={pageDescription}
   metaDescription="Frank Marras portfolio about me section.  Provides a simple bio."
 >
   <main>

@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro'
 
 let pageDescription =
-  'I am a full-stack developer / musician / project manager with a passion for efficiancy and creating.'
+  'I am a full-stack developer, audio engineer, and project manager with a passion for efficiancy and creating.'
 ---
 
 <MainLayout
@@ -15,25 +15,25 @@ let pageDescription =
       <p>
         Hi, I'm Frank Marra, and this is my portfolio. You can take a look at
         all of my projects on the project page, and soon there will be case
-        studies about each project in the blog section.
+        studies about each in the blog section.
       </p>
       <p>
         I have walked many paths and one thing that has always remained constant
-        is my love of creation. Whether I am writing a song, building a house,
+        is my love of creation. Whether I am recording a song, building a house,
         or developing an app, nothing is more satisfying than stepping back and
         seeing what I have helped create.
       </p>
       <p>
         I also love video games, as you can see by the theme of this page. And
-        I'm always willing to talk about music. Any genre, any time period. I
-        love it all. Shoot me an <a
+        I'm always willing to talk about music. Any genre, any time period, from
+        anywhere in the world. I love it all. Shoot me an <a
           href="mailto:frankrmarra@gmail.com"
           target="_blank"
           id="email"
           aria-label="email"
         >
           email</a
-        > and let me know what you are playing or what you are listening to.
+        > and let me know what you are playing or listening to.
       </p>
     </div>
   </main>
@@ -46,5 +46,11 @@ let pageDescription =
   }
   a:hover {
     animation: blink 0.7s infinite;
+  }
+
+  @media screen and (max-width: 800px) {
+    p {
+      line-height: 1rem;
+    }
   }
 </style>

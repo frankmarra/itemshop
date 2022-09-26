@@ -25,7 +25,7 @@
 html {
   font-family: retroGaming, system-ui, sans-serif;
   font-size: var(--font-size-base);
-  background-color: var(--color-bg);
+ 
 }
 
 .visually-hidden {
@@ -45,6 +45,7 @@ body {
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position-x: center;
   height: 100vh;
 }
 
@@ -56,10 +57,6 @@ a {
   text-decoration: none;
   color: var(--color-text);
 }
-
-/* a:hover {
-  animation: blink 0.7s infinite;
-} */
 
 a[aria-current='page'] {
   color: #0fce3d;

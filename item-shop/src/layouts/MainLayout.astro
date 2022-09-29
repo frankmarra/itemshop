@@ -79,6 +79,17 @@ let letters = pageDescription.split('')
 </Layout>
 
 <style>
+  body {
+    margin: 0;
+    background-image: url('/assets/map001_sm.png');
+    background-color: rgba(72, 72, 72, 0.3);
+    background-blend-mode: soft-light;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    height: 100vh;
+  }
+
   h1 {
     font-size: 1rem;
   }
@@ -157,6 +168,9 @@ let letters = pageDescription.split('')
   }
 
   @media screen and (max-width: 800px) {
+    body {
+      background-image: url('/assets/mobile.png');
+    }
     .page-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;

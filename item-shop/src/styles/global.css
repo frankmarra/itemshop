@@ -38,16 +38,7 @@ html {
   width: 1px;
 }
 
-body {
-  margin: 0;
-  background-image: url('/assets/map001_sm.png');
-  background-color: rgba(72, 72, 72, 0.3);
-  background-blend-mode: soft-light;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position-x: center;
-  height: 100vh;
-}
+
 
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
@@ -87,9 +78,7 @@ ul {
 }
 
 @media screen and (max-width: 800px) {
-  body {
-    background-image: url('/assets/mobile.png');
-  }
+  
   .profile-pic img {
     width: 128px;
     height: 115px;

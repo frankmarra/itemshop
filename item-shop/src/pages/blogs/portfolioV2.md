@@ -5,7 +5,7 @@ title: "Astro, from a beginner's point of view"
 
 
 
-# It starts...
+## It starts...
 
 I didn't start learning software development until this past January.  Four lifetimes ago, I was a computer science major, and I had helped make my high school band's website.  That was it.  That was all the programming experience I had.  Over the past ten months though, I have learned what I think is a pretty good foundation for software development.  I have completed the General Assembly Software Engineering Immersive course, built a few personal projects (like this portfolio!), and have even launched a site I built as a freelance gig.
 

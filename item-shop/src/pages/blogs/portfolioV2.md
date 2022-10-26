@@ -13,13 +13,17 @@ I feel like the best way to learn is to build, so each project I like to try and
 
 ## What is Astro?
 
-[Astro.build](https://docs.astro.build) defines it as an all-in-one web framework for building fast, content-focused websites.  I define it as a front-end milkshake, and who doesn't love a milkshake?  I say this because its a blend of a bunch of things, like being able to use JSX expressions and scoped CSS.  There is so much more to it, and I'm sure I've only started to scratch the surface on what it is capable of.  You can check out the Astro docs at [Astro.build](https://docs.astro.build) for an in depth look at what Astro is and what it is capable of.  
+[Astro.build](https://docs.astro.build) defines it as an all-in-one web framework for building fast, content-focused websites.  I define it as a front-end milkshake, and who doesn't love a milkshake?  I say this because its a blend of a bunch of things, like being able to use JSX expressions and scoped CSS, as well as the freedom to use any front-end framework of your choice.  You can even use all of the front-end frameworks, if you want.  Astro all sends no javascrip to the browser, so it's perfect for portfolio and blog sites, like this one.  There is so much more to it, and I'm sure I've only started to scratch the surface of Astro's features.  You can check out the Astro docs at [Astro.build](https://docs.astro.build) for an in depth look at what Astro is and what it is capable of.  
 
 ## Beginning
 
-I love video games.  Always have, always will.  After speaking with a friend about a mutually loved series, I decided to play them again.  While doing this, I noticed that the menus had a really cool layout.  I then decided that it would be really cool to try and remake my portfolio in this style.
+I love video games.  Always have, always will.  
+
+After speaking with a friend about a mutually loved series, I decided to play them again.  While doing this, I noticed that the menus had a really cool layout.  I then decided that it would be really cool to try and remake my portfolio in this style.
 
 The series is Phantasy Star, and old Sega sci-fi space opera rpg.  I could write a whole separate article on each of the four games, but for now we are just going to be focusing on the last one and it's shop screen.
+
+ 
 
 ![Image of the item shop from phantasy star four with lines breaking down the layout into sections](https://res.cloudinary.com/silverbeard/image/upload/v1664338494/blogs/1%20-%20Astro/PSIV_Item_shop_layout_wqu2pq.png)
 

@@ -12,6 +12,11 @@
   font-family: storybook;
   src: url('/fonts/Storyboo.TTF');
 }
+
+@font-face {
+  font-family: lorin;
+  src: url('/fonts/Lorin-Regular.ttf')
+}
 :root {
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);

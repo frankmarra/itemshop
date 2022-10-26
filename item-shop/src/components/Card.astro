@@ -1,10 +1,14 @@
 ---
-const { href, title, thumb, gitLink } = Astro.props
+const { href, title, thumb, gitLink, body } = Astro.props
 ---
 
 <li class="link-card">
   <div class="project-box">
     <a href={href} target="_blank">
+      <div class="project-hover">
+        <p>{title}</p>
+        <p>{body}</p>
+      </div>
       <img src={thumb} alt={title} />
     </a>
   </div>
@@ -29,6 +33,28 @@ const { href, title, thumb, gitLink } = Astro.props
     margin-inline: 1vw;
     padding: 2vh 1.3vw 1.3vh;
     scroll-snap-align: start;
+    position: relative;
+  }
+
+  .project-hover {
+    display: flex;
+    flex-flow: column;
+    opacity: 0;
+    position: absolute;
+    background-color: black;
+    color: var(--color-text);
+    font-size: inherit;
+    transition: 0.3s;
+    z-index: 3;
+    height: 40vh;
+    width: 80%;
+    padding-inline: 1vw;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .project-hover:hover {
+    opacity: 1;
   }
 
   .project-box:hover {
@@ -60,5 +86,15 @@ const { href, title, thumb, gitLink } = Astro.props
 
   .gitlink a:hover {
     animation: blink 0.7s infinite;
+  }
+
+  @media screen and (max-width: 800px) {
+    .project-hover {
+      height: 84%;
+      width: 75%;
+    }
+    .project-hover p {
+      font-size: 0.35rem;
+    }
   }
 </style>

@@ -1,8 +1,7 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 
-const resumeLink =
-  'https://docs.google.com/document/d/1q-33FVkjh5DkG0LgGTEdNd-UdJnrkYmfElnjHYoTVzM/edit?usp=sharing'
+const resumeLink = '/assets/frank marra resume.pdf'
 
 let pageDescription = 'This is my current resume.'
 ---
@@ -15,12 +14,9 @@ let pageDescription = 'This is my current resume.'
   <main>
     <section class="resume-wrapper">
       <div class="resume-download-button">
-        <a href={resumeLink}>Download</a>
+        <a href={resumeLink} download>Download</a>
       </div>
-      <iframe
-        title="resume"
-        class="resume"
-        src="https://docs.google.com/document/d/e/2PACX-1vQ2rQLUhTyGuXlMTPqe1F35D_unPAp6gswOtKFNwogr8Kp7bs6SM-9wgLFNqn4giYKFnRy3k2Bv7k_V/pub?embedded=true"
+      <iframe title="resume" class="resume" src="/assets/frank marra resume.pdf"
       ></iframe>
     </section>
   </main>

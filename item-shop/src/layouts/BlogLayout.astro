@@ -1,0 +1,20 @@
+---
+const { frontmatter } = Astro.props
+---
+
+<section class="pos-wrapper">
+  <div class="left-gutter"></div>
+  <div class="content">
+    <h1>{frontmatter.title}</h1>
+    <slot />
+    <p>Written on: {frontmatter.date}</p>
+  </div>
+  <div class="right-gutter"></div>
+</section>
+
+<style>
+  img {
+    height: 40%;
+    width: auto;
+  }
+</style>

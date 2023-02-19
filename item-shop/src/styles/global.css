@@ -62,7 +62,7 @@ a[aria-current='page'] {
   color: #0fce3d;
 }
 
-li:hover {
+li:hover, a:hover {
   animation: blink 0.7s infinite;
 }
 

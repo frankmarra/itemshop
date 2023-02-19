@@ -1,17 +1,21 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
 
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('posts')
+
 let pageDescription =
   'These are case studies for my projects, as well as other random musings.'
 ---
 
 <MainLayout
-  title="Blog"
+  title="Posts"
   pageDescription={pageDescription}
-  metaDescription="Frank Marras portfolio blog navigation page.  Displays all of the blog posts Frank has written."
+  metaDescription="Frank Marras portfolio posts navigation page.  Displays all of the posts Frank has written."
 >
   <main>
-    <h2>Coming Soon!</h2>
+    <ul class="post-list"></ul>
   </main>
 </MainLayout>
 

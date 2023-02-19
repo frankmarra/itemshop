@@ -1,21 +1,12 @@
 ---
-layout: ../../layouts/BlogLayout.astro
+layout: ../../layouts/PostLayout.astro
 slug: write-a-song-today
 title: WriteASong.Today and Everyday
+hero: https://res.cloudinary.com/silverbeard/image/upload/v1676834596/Portfolio/project%20pictures/writeasongtoday_bsd7ba.png
+heroAlt: Write a song today screenshot
+siteLink: https://writeasong.today
 description: A simple app to aid in song writing
 date: 2/17/23
----
-
-<!-- ![Write A Song Today](https://res.cloudinary.com/silverbeard/image/upload/v1676061266/Portfolio/project%20pictures/Screen_Shot_2023-02-10_at_3.33_meqhyg.png) -->
-
-<img src="https://res.cloudinary.com/silverbeard/image/upload/v1676061266/Portfolio/project%20pictures/Screen_Shot_2023-02-10_at_3.33_meqhyg.png" alt="Write a song today screenshot"  width='100%' className='screenshot' style='border-top-left-radius: 10px; border-top-right-radius: 10px'/>
-
----
-
-<div style='text-align: center; margin-block: 2vh'> 
-** <a href='https://writeasong.today' target='_blank'>Try it out!</a> **
-</div>
-
 ---
 
 Over the past couple of days, I have been trying to spend about an hour creating music. It helps clear my head and get me in a creative zone. But doing this has made me realize that sometimes I get stuck on the details.

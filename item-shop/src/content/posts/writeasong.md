@@ -6,12 +6,20 @@ description: A simple app to aid in song writing
 date: 2/17/23
 ---
 
-![Write A Song Today](https://res.cloudinary.com/silverbeard/image/upload/v1676061266/Portfolio/project%20pictures/Screen_Shot_2023-02-10_at_3.33_meqhyg.png)
+<!-- ![Write A Song Today](https://res.cloudinary.com/silverbeard/image/upload/v1676061266/Portfolio/project%20pictures/Screen_Shot_2023-02-10_at_3.33_meqhyg.png) -->
 
-[WriteASong.Today](https://writeasong.today)
+<img src="https://res.cloudinary.com/silverbeard/image/upload/v1676061266/Portfolio/project%20pictures/Screen_Shot_2023-02-10_at_3.33_meqhyg.png" alt="Write a song today screenshot"  width='100%' className='screenshot' style='border-top-left-radius: 10px; border-top-right-radius: 10px'/>
 
-If you are anything like me, then a blank canvas is one of the most stress inducing things ever. Don't get me wrong, I love starting something. But those first few moments where the possibilities are endless can be terrifying. Like driving over a steep bridge where you cant see the other side until you get to the top.
+---
 
-WriteASong.Today is here to alleviate some of that for the modern musician. This is a simple app I threw together that gives the user a songwriting guide to get the creative juices flowing. Simply click on 'Get Inspired' to receive a random key and tempo, as well as a few standard chord progressions in the key. You can also randomize each element individually if you want.
+<div style='text-align: center; margin-block: 2vh'> 
+** <a href='https://writeasong.today' target='_blank'>Try it out!</a> **
+</div>
+
+---
+
+Over the past couple of days, I have been trying to spend about an hour creating music. It helps clear my head and get me in a creative zone. But doing this has made me realize that sometimes I get stuck on the details.
+
+I made WriteASong.Today as a kick start to the songwriting process. It will provide you with a key, common progressions in that key, and a tempo to start writing with. Maybe you just use the tempo, or maybe you take one of the progressions and switch up the key.
 
 So go ahead and get inspired. I would love to hear what you come up with!

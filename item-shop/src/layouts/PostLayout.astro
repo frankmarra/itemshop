@@ -71,4 +71,18 @@ const { frontmatter } = Astro.props
     font-size: 1.2rem;
     line-height: 1.5;
   }
+
+  @media screen and (max-width: 800px) {
+    .content {
+      width: 80vw;
+    }
+
+    .content h1 {
+      font-size: 1.5rem;
+    }
+    .content img {
+      width: 100%;
+      height: auto;
+    }
+  }
 </style>

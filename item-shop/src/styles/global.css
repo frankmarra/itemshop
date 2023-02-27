@@ -40,7 +40,7 @@ html {
 
 body {
   margin: 0;
-  background-image: url('/assets/map001_sm.png');
+  background-image: url('/public/assets/map001_sm.png');
   background-color: rgba(72, 72, 72, 0.3);
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
@@ -62,7 +62,7 @@ a[aria-current='page'] {
   color: #0fce3d;
 }
 
-li:hover {
+li:hover, a:hover {
   animation: blink 0.7s infinite;
 }
 
@@ -88,7 +88,7 @@ ul {
 
 @media screen and (max-width: 800px) {
   body {
-    background-image: url('/assets/mobile.png');
+    background-image: url('/public/assets/mobile.png');
   }
   .profile-pic img {
     width: 128px;

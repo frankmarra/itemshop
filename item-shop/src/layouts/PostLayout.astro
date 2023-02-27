@@ -8,7 +8,7 @@ const { frontmatter } = Astro.props
   <nav>
     <ul>
       <li><a href="/">frankmarra.dev</a></li>
-      <li><a href="/projects">posts</a></li>
+      <li><a href="/projects">portfolio</a></li>
     </ul>
   </nav>
   <div class="post-wrapper">
@@ -73,6 +73,10 @@ const { frontmatter } = Astro.props
   }
 
   @media screen and (max-width: 800px) {
+    nav {
+      font-size: 1rem;
+      border-bottom: 1px solid whitesmoke;
+    }
     .post {
       width: 80vw;
       height: 100vh;
@@ -80,6 +84,7 @@ const { frontmatter } = Astro.props
 
     .post h1 {
       font-size: 1.5rem;
+      text-align: center;
     }
   }
 </style>

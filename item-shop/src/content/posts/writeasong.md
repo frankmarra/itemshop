@@ -6,7 +6,6 @@ hero: https://res.cloudinary.com/silverbeard/image/upload/v1676834596/Portfolio/
 heroAlt: Write a song today screenshot
 siteLink: https://writeasong.today
 description: A simple app to aid in song writing
-date: 2/17/23
 ---
 
 Over the past couple of days, I have been trying to spend about an hour creating music. It helps clear my head and get me in a creative zone. But doing this has made me realize that sometimes I get stuck on the details.

@@ -13,7 +13,7 @@ const { frontmatter } = Astro.props
   </nav>
   <div class="post-wrapper">
     <div class="left-gutter"></div>
-    <div class="content">
+    <div class="post">
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
       <img src={frontmatter.hero} alt={frontmatter.heroAlt} />
@@ -47,13 +47,13 @@ const { frontmatter } = Astro.props
     background-color: black;
   }
 
-  .content {
+  .post {
     overflow-y: scroll;
     height: 100%;
     width: 70vw;
   }
 
-  .content img {
+  .post img {
     width: 100%;
     height: auto;
     border-radius: 10px 10px 0 0;
@@ -73,16 +73,13 @@ const { frontmatter } = Astro.props
   }
 
   @media screen and (max-width: 800px) {
-    .content {
+    .post {
       width: 80vw;
+      height: 100vh;
     }
 
-    .content h1 {
+    .post h1 {
       font-size: 1.5rem;
-    }
-    .content img {
-      width: 100%;
-      height: auto;
     }
   }
 </style>

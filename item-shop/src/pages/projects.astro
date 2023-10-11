@@ -14,6 +14,13 @@ let pageDescription =
   <main>
     <ul class="carousel">
       <Card
+        title="DLCM.app"
+        body="Download Code Manager V2"
+        href="/posts/dlcmv2"
+        thumb="https://res.cloudinary.com/silverbeard/image/upload/v1696985754/DCMV2_Box_xra15g.png"
+        gitLink="https://github.com/frankmarra/DLCM"
+      />
+      <Card
         title="WriteASong.Today"
         body="A simple songwriting aid"
         href="/posts/write-a-song-today"
@@ -78,7 +85,8 @@ let pageDescription =
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    overscroll-behavior-x: contain;
+    /* overscroll-behavior-x: contain; */
     align-items: center;
+    scroll-snap-align: left;
   }
 </style>

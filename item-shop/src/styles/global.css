@@ -40,7 +40,7 @@ html {
 
 body {
   margin: 0;
-  background-image: url('/public/assets/Map001_sm.png');
+  background-image: url('/assets/Map001_sm.png');
   background-color: rgba(72, 72, 72, 0.3);
   background-blend-mode: soft-light;
   background-repeat: no-repeat;
@@ -88,7 +88,7 @@ ul {
 
 @media screen and (max-width: 800px) {
   body {
-    background-image: url('/public/assets/mobile.png');
+    background-image: url('/assets/mobile.png');
   }
   .profile-pic img {
     width: 128px;

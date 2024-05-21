@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 slug: merry-movies
 title: Merry Movies | Please Rewind
-hero: https://res.cloudinary.com/silverbeard/image/upload/v1716252977/Merry_Movies_Box_jukcip.png
+hero: https://res.cloudinary.com/silverbeard/image/upload/v1716253379/Screen_Shot_2024-05-20_at_9.02.22_PM_b0lh1f.png
 heroAlt: Merry Movies screenshot
 siteLink: https://please-rewind.com
 description: A holiday movie countdown
